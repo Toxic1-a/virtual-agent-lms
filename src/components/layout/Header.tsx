@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { useAgentModeControls } from '../../hooks/useAgentMode'
 import { useProgress } from '../../context/ProgressContext'
 import { useSound } from '../../context/SoundContext'
+import { assetUrl } from '../../lib/assetUrl'
 
 const links = [
   { to: '/', label: 'الرئيسية', end: true },
@@ -23,7 +24,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img
-            src="/images/logo-agent.svg"
+            src={assetUrl('/images/logo-agent.svg')}
             alt=""
             width={40}
             height={40}

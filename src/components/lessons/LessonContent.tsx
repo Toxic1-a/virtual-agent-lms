@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { Lesson } from '../../types'
+import { assetUrl } from '../../lib/assetUrl'
 import { useUiMotion } from '../../motion/useUiMotion'
 
 interface LessonContentProps {
@@ -55,7 +56,7 @@ export function LessonContent({ lesson }: LessonContentProps) {
               className="card overflow-hidden"
             >
               <img
-                src={image.src}
+                src={assetUrl(image.src)}
                 alt={image.alt}
                 className="max-h-80 w-full bg-secondary-50 object-contain p-2"
               />
@@ -74,7 +75,7 @@ export function LessonContent({ lesson }: LessonContentProps) {
             {lesson.downloads.map((file) => (
               <li key={file.id}>
                 <a
-                  href={file.url}
+                  href={assetUrl(file.url)}
                   download
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
                 >

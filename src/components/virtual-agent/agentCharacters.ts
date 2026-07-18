@@ -1,3 +1,5 @@
+import { assetUrl } from '../../lib/assetUrl'
+
 export type AgentMood = 'idle' | 'talk' | 'happy' | 'think'
 
 export interface AgentCharacterConfig {
@@ -16,7 +18,7 @@ export interface AgentCharacterConfig {
 
 /** Animated agent: mouse-following face tracking character */
 export const ANIMATED_AGENT_CHARACTER: AgentCharacterConfig = {
-  src: '/rive/face-tracking.riv',
+  src: assetUrl('/rive/face-tracking.riv'),
   artboard: 'MichiFaceTracker',
   useStateMachine: true,
   stateMachine: 'FaceTracking-StateMachine',
@@ -30,7 +32,7 @@ export const ANIMATED_AGENT_CHARACTER: AgentCharacterConfig = {
 
 /** Static agent: face-tracking character frozen (no mouse follow / no motion) */
 export const STATIC_AGENT_CHARACTER: AgentCharacterConfig = {
-  src: '/rive/face-tracking-static.riv',
+  src: assetUrl('/rive/face-tracking-static.riv'),
   artboard: 'MichiFaceTracker',
   useStateMachine: true,
   stateMachine: 'FaceTracking-StateMachine',

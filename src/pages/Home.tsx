@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { PageShell } from '../components/layout/PageShell'
 import { useAgentCue } from '../context/AgentCueContext'
 import { useAgentScript, useAuthors, useCourse } from '../hooks/useCourseData'
+import { assetUrl } from '../lib/assetUrl'
 import { useUiMotion } from '../motion/useUiMotion'
 
 export function Home() {
@@ -19,7 +20,7 @@ export function Home() {
       <section className="relative overflow-hidden rounded-card">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-digital-learning.jpg"
+            src={assetUrl('/images/hero-digital-learning.jpg')}
             alt="تعلّم رقمي عبر الحاسوب في بيئة تعليمية حديثة"
             className="hero-visual h-full w-full object-cover"
           />

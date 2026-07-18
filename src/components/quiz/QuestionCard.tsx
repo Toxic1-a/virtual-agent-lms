@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { QuizQuestion } from '../../types'
+import { assetUrl, isAssetPath } from '../../lib/assetUrl'
 import { useUiMotion } from '../../motion/useUiMotion'
 
 interface QuestionCardProps {
@@ -35,7 +36,7 @@ export function QuestionCard({
       {question.imageUrl ? (
         <figure className="overflow-hidden rounded-card border border-secondary-100 bg-secondary-50">
           <img
-            src={question.imageUrl}
+            src={assetUrl(question.imageUrl)}
             alt="صورة مرفقة بالسؤال"
             className="mx-auto max-h-72 w-auto object-contain p-3"
           />
@@ -46,14 +47,14 @@ export function QuestionCard({
         <legend className="sr-only">{question.prompt}</legend>
         <div
           className={
-            question.options.some((o) => o.text.startsWith('/images/'))
+            question.options.some((o) => isAssetPath(o.text))
               ? 'grid gap-3 sm:grid-cols-2'
               : 'space-y-2'
           }
         >
           {question.options.map((option, optionIndex) => {
             const selected = selectedId === option.id
-            const isImageOption = option.text.startsWith('/images/')
+            const isImageOption = isAssetPath(option.text)
             let stateClass = 'border-secondary-100 bg-white hover:border-primary/30'
             if (revealed && option.correct) stateClass = 'visual-feedback-correct'
             if (revealed && selected && !option.correct) stateClass = 'visual-feedback-incorrect'
@@ -77,7 +78,7 @@ export function QuestionCard({
                 />
                 {isImageOption ? (
                   <img
-                    src={option.text}
+                    src={assetUrl(option.text)}
                     alt={`خيار ${option.id}`}
                     className="max-h-24 w-auto rounded-lg border border-secondary-100 object-contain"
                   />
