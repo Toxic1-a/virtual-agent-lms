@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#F8FAFC"/>
+  <rect x="50" y="60" width="240" height="240" rx="18" fill="#fff" stroke="#2563EB"/>
+  <circle cx="170" cy="140" r="40" fill="#2563EB"/>
+  <text x="170" y="230" text-anchor="middle" fill="#0F172A" font-size="18" font-family="Cairo, Arial">ثابت</text>
+  <rect x="350" y="60" width="240" height="240" rx="18" fill="#fff" stroke="#14B8A6"/>
+  <circle cx="470" cy="140" r="40" fill="#14B8A6"/>
+  <path d="M430 200c20-20 60-20 80 0" stroke="#0F172A" stroke-width="4" fill="none"/>
+  <text x="470" y="230" text-anchor="middle" fill="#0F172A" font-size="18" font-family="Cairo, Arial">متحرك</text>
+</svg>

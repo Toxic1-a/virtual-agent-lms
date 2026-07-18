@@ -1,0 +1,2597 @@
+{
+  "id": "achievement-test",
+  "moduleId": "",
+  "title": "الاختبار التحصيلي — الجوانب المعرفية لمهارات المعلم الرقمي",
+  "instructions": "اقرأ كل مفردة بدقة وعناية قبل الإجابة. لا تترك أي مفردة دون إجابة. يتكون الاختبار من أسئلة اختيار من متعدد وأسئلة صواب وخطأ. المعيار هو الحصول على نسبة 90% فأكثر من الدرجة الكلية.",
+  "passingScore": 90,
+  "kind": "general",
+  "isFinal": true,
+  "questions": [
+    {
+      "id": "ach-mcq-1",
+      "prompt": "تتعدد خصائص المعلم الرقمي فنجد منها؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "القدرة علي التواصل الفعال.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "القدرة على التدريس واستخدام تقنيات التعليم الحديثة.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "القدرة علي التحفيز والتقويم.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "القدرة على التفكير الإبداعي والتشجيع عليه.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-2",
+      "prompt": "جميع ما يلى يعد مواصفات المعلم الرقمي الناجح، عدا؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "القدرة علي التحفيز والتقويم.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "القدرة علي التواصل الفعال.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "القدرة على التفكير الناقد.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "القدرة على الإرشاد والتوجيه للتعلم الرقمي الذاتي.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-3",
+      "prompt": "تتمثل أهمية المهارات الرقمية للمعلم في",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "التأهيل لمتطلبات واحتياجات سوق العمل.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "التوظيف الجيد للتكنولوجيا الرقمية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الاستخدام الأمثل للتقنيات الرقمية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-4",
+      "prompt": "أى مما يلي يعبر عن مميزات المحتوى التعليمى الرقمي.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "يتضمن وسائط متعددة غير تفاعلية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "سهولة الوصول إليه في أي وقت ومكان.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "يوفر القليل من الروابط التشعبية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "مكلف ماديًا مقارنة بالمحتوى التقليدي.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-5",
+      "prompt": "جميع ما يلى يعد من خصائص المحتوى التعليمى الرقمي، عدا",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "الاستقلالية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "التعديل.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الترابطية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التكيف.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-6",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image2.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التخصيص.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "الإشارة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الطريقة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التكرار.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-7",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image3.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التخصيص.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الإشارة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الطريقة.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "التكرار.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-8",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image4.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التخصيص.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الإشارة.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "الطريقة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التكرار.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-9",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image5.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التخصيص.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الإشارة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الطريقة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التكرار.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-10",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image6.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التماسك.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الوسائط المتعددة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "التقسيم.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "التدريب المسبق.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-11",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image7.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التماسك.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "الوسائط المتعددة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "التقسيم.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التدريب المسبق.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-12",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image8.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التماسك.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الوسائط المتعددة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "التقسيم.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التدريب المسبق.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-13",
+      "prompt": "عن مبدأ................ الذي يعد من مبادئ تصميم المحتوي التعليمي الرقمي.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image9.jpeg",
+      "options": [
+        {
+          "id": "a",
+          "text": "التماسك.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الوسائط المتعددة.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "التقسيم.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "التدريب المسبق.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-14",
+      "prompt": "تتعدد المعاييـر التربوية لتصميم وإنتاج المحتوي التعليمي الرقمي فنجد منها",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "الــرسوم المتحركة.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الأهداف التعليمية.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "النصوص المكتوبة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "روابط التنقل والابحار.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-15",
+      "prompt": "تتعدد المعاييـر الفنية لتصميم وإنتاج المحتوي التعليمي الرقمي فنجد منها",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "دليل الاستخدام.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الأهداف التعليمية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الفئة المستهدفة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "روابط التنقل والابحار.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-16",
+      "prompt": "تأتى مرحلة التنفيذ في مراحل النموذج العام للتصميم التعليمى بعد مرحلة؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "التحليل.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "التصميم.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الإنتاج.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "التقويم.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-17",
+      "prompt": "تتمثل خطوات مرحلة التحليل لتصميم وإنتاج المحتوى الإلكتروني في؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تحليل المتعلم وسلوكه المبدئي.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تحليل بيئة وظروف التعلم.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تحليل الحاجات التعليمية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-18",
+      "prompt": "يعد من أنواع التغذية الراجعة بناء على الزمن.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تغذية راجعة داخلية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تغذية راجعة مؤجلة.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "تغذية راجعة صريحة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "تغذية راجعة خارجية.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-19",
+      "prompt": "تتمثل خطوات مرحلة التصميم لتصميم وإنتاج المحتوى الإلكتروني في",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تصميم أدوات التقويم والقياس.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "اختيار تسلسل المحتوى وتصميمه.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "اختيار وتصميم مصادر ووسائل التعلم.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-20",
+      "prompt": "جميع ما يلي يعد من الأساليب التي تتطلب اختيار إجابات محددة البنية لقياس وتقويم للمتعلم.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "مفردات المزاوجة.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "مفردات الإكمال.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "مفردات الاختيار من متعدد.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "مفردات الصواب والخطأ.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-21",
+      "prompt": "تختلف طرق تقديم المحتوى الإلكتروني وفقًا لأهداف المحتوى ومدى قابليتـه للعرض الإلكتروني، ونوع الاستراتيجيات والأنشطة التعليمية المستخدمة، فنجد من هذه الطرق",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "محتوى إلكتروني معتمد على الإنترنت.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "محتوى إلكتروني غير معتمد على الإنترنت.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "محتوى إلكتروني مزيج.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-22",
+      "prompt": "توجد العديد من البرامج الخاصة بتصميم المحتوى الإلكتروني ، فنجد منها:",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adobe illustrator.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Flip pdf professional.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Storyline Articulate.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Mixcraft.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-23",
+      "prompt": "تأتى خطوه بناء الصفحات في مرحلة الإنتاج لتصميم المحتوى الإلكتروني بعد خطوه",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "إنتاج عناصر التعلم.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "ربط الصفحات بالإنترنت.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "التغذية الراجعة لمرحلة الإنتاج.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "ليس مما سبق.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-24",
+      "prompt": "جميع ما يلي يعد من خطوات مرحلة التنفيذ لتصميم وإنتاج المحتوى الإلكتروني، عدا؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "اختيار خادم مناسب.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "تجريب المحتوى الإلكترونى على عينة من المتعلمين.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "عرض المحتوى الإلكترونى على معلمين متخصصين فى المقرر.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "تصنيف نتائج التجربة إلى إيجابية وسلبية.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-25",
+      "prompt": "أحد خطوات مرحلة التقويم لتصميم المحتوى الإلكتروني.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "التحكيم.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "التجريب.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أ، ب",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "ليس مما سبق.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-26",
+      "prompt": "جميع مايلي يعد من مميزات برنامج Articulate Storyline، عدا.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تصميم محتوي رقمي تفاعلي.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تصميم اختبارات الكترونية تفاعلية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تصميم العاب تعليمية تفاعلية.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "تصميم فيديوهات تفاعلية.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-27",
+      "prompt": "لفتح برنامج Articulate Storyline نضغط على.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "/images/achievement-test/image10.png",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "/images/achievement-test/image11.png",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "/images/achievement-test/image12.png",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "/images/achievement-test/image13.png",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-28",
+      "prompt": "مكون من مكونات الشاشة الافتتاحية لبرنامج Articulate Storyline .",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Menu Bar",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Import",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Control bar",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Art board",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-29",
+      "prompt": "لإنشاء مشروع جديد فى برنامج Articulate Storyline نضغط على أمر.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create Project.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "New Project.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Project Import.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Project .Open",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-30",
+      "prompt": "من مكونات واجهة التفاعل ببرنامج Articulate Storyline .",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Triggers.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Templates.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Import.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Open",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-31",
+      "prompt": "جميع ما يلى يعد من مسميات الفصول الافتراضية ، عدا.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "الفصول الإلكترونية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الفصول الرقمية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الفصول الوهمية.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "الفصول التخيلية.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-32",
+      "prompt": "تتعدد أنواع الفصول الافتراضية المتزامنة فنجد منها؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yammer",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "claroline",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "school Gen",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Blak Board",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-33",
+      "prompt": "تتعدد أنواع الفصول الافتراضية غير المتزامنة فنجد منها؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "classroom",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "centra",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "talkroom",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Blak Board",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-34",
+      "prompt": "تتمثل مكونات الفصل الافتراضي في.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "أداة عرض التطبيقات.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "السبورة البيضاء التفاعلية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أداة التجول عبر الإنترنت",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-35",
+      "prompt": "تتمثل مبررات استخدام الفصول الافتراضية في.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تبادل الخبرات بين المعلمين.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "سهولة الوصول للشرح أين ما وجد المتعلم و في أي وقت.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "العمل على توفير بيئة تفاعلية للمتعلمين.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-36",
+      "prompt": "تتعدد مهام المعلم فى الفصول الافتراضية فنجد منها.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "المشاركة في النقاشات والحوار.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الالتزام بقواعد السلوك المقترحة.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تنظيم بيئة التعلم وجعلها مريحة وتعاونية.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "الاطلاع على مصادر التعلم الإضافية على الشبكة.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-37",
+      "prompt": "تتعدد مهام المتعلم فى الفصول الافتراضية فنجد منها.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "المشاركة في النقاشات والحوار.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "تحديد أهداف الدروس والمقررات.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تنظيم بيئة التعلم وجعلها مريحة وتعاونية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "تقديم الدعم والإرشاد الأكاديمي.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-38",
+      "prompt": "تتمثل مميزات استخدام الفصول الافتراضية بالنسبة للمعلم فى .",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تساعد على إدارة المقررات الدراسية.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "تشجيع فرصة المشاركة الفكرية دون خوف أو قلق.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "إتاحة التعليم في أي وقت وأي مكان.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "تنمية التعليم الفردي والجماعي.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-39",
+      "prompt": "تتمثل مميزات استخدام الفصول الافتراضية بالنسبة للمتعلم فى .",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تساعد على إدارة المقررات الدراسية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تقليل الأعباء الثقيلة بالمراجعة والتصحيح.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تشجيع فرصة المشاركة الفكرية دون خوف أو قلق.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "إمكانية استخدام الوسائط التعليمية المتنوعة في الشرح.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-40",
+      "prompt": "تتمثل معوقات استخدام الفصول الافتراضية فى.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "ضرورة توافر شبكة الإنترنت.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "ضرورة توافر أجهزة حاسوب أو أجهزة لوحية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "ضرورة وجود نظام إدارة ومتابعة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-41",
+      "prompt": "يعد تطبيق Yammer Microsoft office 365 من أهم التطبيقات التى تستخدم في إنشاء.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "فيديوهات التعليمية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "العاب التعليمية.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "عروض التقديمية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "فصول افتراضية.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-42",
+      "prompt": "لفتح تطبيق Yammer Microsoft office 365 نضغط على؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "/images/achievement-test/image14.png",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "/images/achievement-test/image15.png",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "/images/achievement-test/image16.png",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "/images/achievement-test/image17.png",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-43",
+      "prompt": "يتكون الجزء العلوي للواجهة الرئيسية للفصل الافتراضي من؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Members",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Give feedback",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Events",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Question",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-44",
+      "prompt": "يتكون الجزء الأيمن للواجهة الرئيسية للفصل الافتراضي من؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Members",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Notifications",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Events",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Settings",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-45",
+      "prompt": "يتكون الجزء الأوسط للواجهة الرئيسية للفصل الافتراضي من؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Members",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Notifications",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Conversations",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Settings",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-46",
+      "prompt": "تتمثل مميزات الاختبار الإلكتروني بالنسبة للمعلم فى أنه.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "يساعد على التعلم الذاتى.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "موضوعية وعدالة التقييم.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "يساعد على حسن إدارة الوقت.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "سهولة إعداده وتطبيقه ومراجعة النتائ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-47",
+      "prompt": "تتمثل مميزات الاختبار الإلكتروني بالنسبة للمتعلم فى أنه.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "يساعد على التعلم الذاتى.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "الدقة المتناهية فى رصد الدرجات.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "التنوع في الإسئلة الموضوعية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "سهولة إعداده وتطبيقه ومراجعة النتائ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-48",
+      "prompt": "تتمثل عيوب الاختبار الإلكتروني في.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "إعداد الأسئلة يحتاج وقت وجهد كبير.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "صعوبة قياس المهارات العلي",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "صعوبة تصحيح الأسئلة المقالية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-49",
+      "prompt": "جميع ما يلى يعد من أشكال الأسئلة في الاختبار الإلكتروني، عدا.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "أسئلة الترتيب.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "أسئلة التوصيل.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أسئلة المقال.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "ملء الفراغات.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-50",
+      "prompt": "من أشكال أسئلة ............................ في الاختبار الإلكتروني.",
+      "type": "mcq",
+      "imageUrl": "/images/achievement-test/image18.png",
+      "options": [
+        {
+          "id": "a",
+          "text": "الإجابات المتعددة.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الاختيار من متعدد.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "النقاط الساخنة.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "الصواب والخطأ.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-51",
+      "prompt": "أحد التطبيقات المجانية المستخدمة في إنتاج الاختبار الإلكتروني.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Forms Microsoft office 365",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Articulate 360",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Test Maker 2.6",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Respondus 3.5",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-52",
+      "prompt": "أحد التطبيقات التجارية المستخدمة في إنتاج الاختبار الإلكتروني.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "Classmarker",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Schoology",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Quiz Builder",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Hot Potatoes",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-53",
+      "prompt": "تتمثل المعايير التربوية لتصميم الاختبار الإلكتروني فى.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "البساطة فى تصميمه.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "قياس الهدف التعليمى الذى صمم من أجله.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "سلامة اللغة اللفظية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "الإخراج الجيد.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-54",
+      "prompt": "تتمثل المعايير الفنية لتصميم الاختبار الإلكتروني فى.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "الصدق.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الثبات.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الشمولية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "الإخراج الجيد.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-55",
+      "prompt": "تأتي مرحلة التطبيق للاختبار الإلكتروني بعد مرحلة.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "التحليل.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "التصميم.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الإنتاج.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "النشر.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-56",
+      "prompt": "تتمثل خطوات مرحلة التحليل للاختبار الإلكتروني في.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تحديد الهدف العام للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تحديد خصائص المتقدمين للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تحليل المادة التعليمية لصياغه محتوى الاختبار.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-57",
+      "prompt": "يعد ................................ أحد خطوات مرحلة التصميم للاختبار الإلكتروني.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تحديد الهدف العام للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "كتابه اسئلة الاختبار.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "تحديد خصائص المتقدمين للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "تحليل المادة التعليمية لصياغه محتوى",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-58",
+      "prompt": "جميع ما يلي يعد من خطوات مرحلة الإنتاج للاختبار الإلكتروني، عدا.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "اختيار برنامج التأليف للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تنفيذ تصميم الاختبار.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "إعداد جدول مواصفات الاختبار.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "التجريب الأولي للاختبار.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-59",
+      "prompt": "يعد ................................ أحد خطوات مرحلة التطبيق للاختبار الإلكتروني.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "تحديد اساليب التصحيح.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "تنفيذ تصميم الاختبار.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "تجريب الاختبار على عينة من الطلا",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "تحديد اساليب التغذية الراجعة.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-60",
+      "prompt": "يعد تطبيق Forms Microsoft office 365 من أهم التطبيقات التى تستخدم في إنتاج",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "العروض التقديمية.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الاختبارات الإلكترنية.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "الألعاب التعليمية.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "الفيديوهات التعليمية.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-61",
+      "prompt": "لفتح تطبيق Forms Microsoft office 365 نضغط على؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "/images/achievement-test/image14.png",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "/images/achievement-test/image15.png",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "/images/achievement-test/image16.png",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "/images/achievement-test/image17.png",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-62",
+      "prompt": "تعد ...................... من مكونات الجزء العلوي لنافذة السؤال.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "أيقونة حذف السؤال.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "أيقونة كتابة السؤال.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أيقونة إضافة السؤال.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "أيقونة إضافة إجابات.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-63",
+      "prompt": "تعد................... من مكونات الجزء الأوسط لنافذة السؤال.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "أيقونة حذف السؤال.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "أيقونة نسخ السؤال.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أيقونة إضافة السؤال.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "أيقونة كتابة السؤال.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-64",
+      "prompt": "تعد................... من مكونات الجزء السفلي لنافذة السؤال.",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "أيقونة حذف السؤال.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "أيقونة نسخ السؤال.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "أيقونة إضافة سؤال.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "أيقونة كتابة السؤال.",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-mcq-65",
+      "prompt": "يعد من طرق إرسال (نشر) الاختبار للفئة المستهدفة؟",
+      "type": "mcq",
+      "options": [
+        {
+          "id": "a",
+          "text": "الحصول على رابط للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "الحصول على QR Code للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "الحصول على دعوة للاختبار.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "جميع ما سبق صحيح.",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-1",
+      "prompt": "المعلم الرقمي هو الشخص الذي يمتلك مجموعة من المهارات والأدوات اللازمة للتعليم وتدريس المواد العلمية في مجتمع متطور رقمي، عن طريق دمج التقنيات الحديثة في العملية التعليمية، وتحسين البيئة الصفية إلي بيئة تفاعلية رقمية ورفع المستوي العلمي والتحصيلي، ومواكبة سوق العمل في القرن الثاني والعشرون.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-2",
+      "prompt": "المهارات الرقمية للمعلم هي مجموعة الأداءات التي لا يتعين على المعلمين إمتلاكها، مثل( مهارات تصميم محتوى تعليمي رقمي، مهارة تصميم أنشطة تعليمية تفاعلية، مهارة التعامل مع أنظمة إدارة التعلم، مهارة تصميم أساليب التقويم الإلكتروني، مهارات انشاء فصول افتراضية وإدارتها).",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-3",
+      "prompt": "يعرف المحتوى الرقمي بأنه المحتوى التعليمي القائم على التكامل بين المادة التعليمية والتكنولوجيا الرقمية لتصميم وإنتاج ونشر المحتوى الرقمي على الانترنت باستخدام إحدى برامج الإنتاج والنشر، وتطبيقه، وتقويمه الكترونيًا في أي وقت ومكان.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-4",
+      "prompt": "نوع المحتوى التعليمى الرقمي غير المعتمد على الشبكات.",
+      "type": "truefalse",
+      "imageUrl": "/images/achievement-test/image19.png",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-5",
+      "prompt": "تعنى خاصية التخصيص في المحتوى التعليمى الرقمي أن تكون عناصر المحتوى مستقلة وذلك خلال مرحلة تصميمها.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-6",
+      "prompt": "تعني خاصية العمل على منصات مختلفة للمحتوى التعليمى الرقمي أن تتوافر فيه خاصية الاستخدام مع كل الأنظمة المختلفة سواء كانت صلبة أو برمجيات.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-7",
+      "prompt": "تتمثل المعاييـر التربوية لتصميم وإنتاج المحتوي التعليمي الرقمي في الاسس والمبادئ التي يجب مراعاتها عند تصميم وإنتاج عناصر ومكونات ووسائط المحتوى التعليمي الرقمي، لإخراجها بشكل جمالى يجذب انتباه المتعلمين، ويزيد من دافعيتهم للتعلم، ويحقق أهداف التعلم المرغوب فيها.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-8",
+      "prompt": "تتمثل المعاييـر الفنية لتصميم وإنتاج المحتوي التعليمي الرقمي في الاسس والمبادئ التي تعمل كموجهات أو خطوط مرشدة لتنظيم المحتوى التعليمي الرقمي وعرضه بوسائل متعددة، وتحديد الأهداف وصياغتها بطريقة واضحة، وتحديد الانشطة المناسبة للمحتوى التعليمى الرقمي.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-9",
+      "prompt": "يُّعرف التصميم التعليمي لتصميم التعليم الإلكتروني بأنه تصور لوصف الإجراءات والعمليات الخاصة بتصميم التعليم وتطويره وتنفيذه وتقوميه بما يتفق مع الخصائص السلوكية للمتعلم، والعلاقات المتبادلة بين مكوناته.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-10",
+      "prompt": "يعد نموذج أمل الطاهر (2017) من نماذج التصميم التعليمي لتصميم المحتوى الإلكتروني.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-11",
+      "prompt": "يفيد تحليل المتعلم والوقوف على خصائصه السلوكية في التعرف على نوع أو نمط التعلم المناسب لنمو المتعلم العقلي وقدراته المعرفية.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-12",
+      "prompt": "تشتمل البيئة النفسية للمتعلم على دافعية المتعلم والمثابرة في العمل وتحمل المسئولية.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-13",
+      "prompt": "تشتمل البيئة الفيزيقية على الصوت والضوء ودرجة الحرارة واختيار وتنظيم الأثاث في مكان التعلم.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-14",
+      "prompt": "يقصد بتحليل الحاجات التعليمية بأنها عملية جمع المعلومات الدقيقة والواقعية بطريقة واحدة حول ما هو كان من مستوى الأداء الحالى ومقارنته بما ينبغى أن يكون عليه مستوى الأداء المرغوب",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-15",
+      "prompt": "يعد المجتمع من مصادر اشتقاق الأهداف التعليمية العامة.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-16",
+      "prompt": "تعد البنية المعرفية للمحتوى مجموعة من التصنيفات التي يمكن تبني إحداها للتعرف على المكونات الرئيسية التي تندرج تحت كل هدف من أهداف هذا المحتوى.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-17",
+      "prompt": "يقصد بتصميم الأحداث وضع المحتوى التعليمي في التسلسل الذي تم اختياره، ووفقًا لأنشطة ووسائل واستراتيجيات التعلم التي تم اختيارها أو تصميمها.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-18",
+      "prompt": "يعرف القياس بأنه عملية جمع للبيانات وتحليلها بطريقة منظمة لكي تعطي أوصافًا كمية أو أوصافًا نوعية تحدد مدى تحقيق الأهداف، أو لكي تصدر أحكام وتتخذ قرارات تتعلق بالمتعلم أو بالبرامج في ضوء هذا التحليل، وبناءً على نمط التقويم المتبع.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-19",
+      "prompt": "يعرف التقويم بأنه إعطاء أوصافًا كمية للبيانات التي جمعت، أو هو تحديد درجة امتلاك الفرد لصفة معينة، بما يوفر وصفًا أكثر موضوعية وييسر المقارنات.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-20",
+      "prompt": "تعد اسئلة المقال من الأساليب التي تتطلب إجابات محددة البنية لقياس وتقويم للمتعلم.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-21",
+      "prompt": "يوضح النموذج الوظيفي قدرات وإمكانيات الموقع التي ستساعد المتعلم في إنجاز المهام التعليمية.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-22",
+      "prompt": "يصاغ دليل المتعلم من قبل المعلم لأنه هو الشخص الوحيد الذي يمكنه شرح قوانين البرنامج للمتعلم وكذلك توضيح كيفية العمل فيه.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-23",
+      "prompt": "تعد استراتيجية العرض العملي من استراتيجيات التعلم.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-24",
+      "prompt": "يعد برنامج Articulate Storyline من أقوي البرامج التي تستخدم في إنتاج المحتوي الإلكتروني التفاعلي والاختبارات التفاعلية.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-25",
+      "prompt": "تعرف الفصول الافتراضية بأنها فصول رقمية تحاكى الفصول التقليدية، وتتيح للمعلم استخدام أدوات وتقنيات وتطبيقات متنوعة في الشرح، وتمكنه من إدارة المناقشات الصفية من خلال التفاعل مع المتعلمين أثناء أداء المهام والأنشطة والتكليفات.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-26",
+      "prompt": "تعد أداة عرض التطبيقات (Application Sharing) وسيلة للمحادثات النصية أو المكتوبة والمتبادلة بين المعلم والمتعلمين وبين المتعلمين بعضهم بعضًا.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-27",
+      "prompt": "تتيح أدوات التعبير بالرموز الرد على استفسارات المعلم أثناء الجلسة؛ حيث يختار المتعلم الإجابة (نعم – لا).",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-28",
+      "prompt": "تمكن أداة التجول عبر الإنترنت (Web Tour) المعلم والمتعلمين من الإبحار في مواقع تعليمية واستعراض ملفات داعمة عبر شبكة الإنترنت أثناء الجلسة.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-29",
+      "prompt": "تعد أدوات التفاعل بالصوت والصورة من أهم مكونات الفصول الافتراضية؛ فهي توفر التفاعل الفوري المباشر بين المعلم والمتعلمين وبين المتعلمين بعضهم بعضًا؛ من خلال التحاور بالصوت فقط وتبادل الآراء.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-30",
+      "prompt": "يتميز تطبيق Yammer Microsoft office 365 بسهولة سهولة إنشاء فصول افتراضية غير تزامنية",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-31",
+      "prompt": "يعرف الاختبار الإلكتروني بأنه إحدى تقنيات الحاسب الآلي التي يمكن للمعلم إعدادها بطريقة سهلة وتوظيفها للتغلب على بعض الصعوبات التي تعيق تنفيذ الاختبارات الورقية، وتصحح إلكترونيًا وفوريًا مما يضمن المصداقية والشفافية في التصحيح",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-32",
+      "prompt": "يعد إتباع معايير جودة تصميم الاختبار الإلكتروني أمر بالغ الأهمية للحفاظ على المصداقية في بناءها، فأسئلة الاختبار لابد أن لا تتنوع وفقًا للمحصلات التعليمية المراد قياسها.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-33",
+      "prompt": "تتمثل وظيفة مرحلة النشر الإلكتروني للاختبار في عدم نشره للفئة المستهدفة سواء على أقراص مدمجة أو بإستخدام أحد أنظمة إدارة التعلم.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-34",
+      "prompt": "يتميز تطبيق Forms Microsoft office 365 بسهولة إنتاج نماذج اختبارات إلكترونية واستطلاعات رأي يتم الإجابة عليها من خلال مستعرض ويب محدد",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-35",
+      "prompt": "لاضافة سؤال للاختبار نضغط على أمر (+ إضافة جديد) من تبويب Responses.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-36",
+      "prompt": "لتغيير لون خلفية الاختبار نختار لون الخلفية من تبويب Theme.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-37",
+      "prompt": "لعمل معاينة للاختبار نضغط على تبويب Questions.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-38",
+      "prompt": "لعرض استجابات الاختبار نضغط على تبويب Collect responses.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-39",
+      "prompt": "يتم إضافة QR Code للاختبار من خلال تبويب Responses.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-40",
+      "prompt": "لتضمين الاختبار في صفحة ويب أو Sway نختار أمر Questions.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": true
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-41",
+      "prompt": "للحصول على رابط الاختبار نختار أمر Collect responses.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    },
+    {
+      "id": "ach-tf-42",
+      "prompt": "لكتابة عنوان للاختبار نضغط على أمر اختبار بدون عنوان من تبويب Questions.",
+      "type": "truefalse",
+      "options": [
+        {
+          "id": "a",
+          "text": "صواب",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "خطأ",
+          "correct": false
+        }
+      ],
+      "explanation": "راجع مفتاح تصحيح الاختبار التحصيلي."
+    }
+  ]
+}

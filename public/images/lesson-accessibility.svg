@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#F0FDFA"/>
+  <rect x="60" y="70" width="520" height="60" rx="12" fill="#fff" stroke="#14B8A6" stroke-width="3"/>
+  <rect x="60" y="150" width="520" height="60" rx="12" fill="#fff" stroke="#2563EB" stroke-width="3"/>
+  <rect x="60" y="230" width="520" height="60" rx="12" fill="#fff" stroke="#0F172A" stroke-width="3"/>
+  <text x="90" y="108" fill="#0F172A" font-size="20" font-family="Cairo, Arial">ترجمة نصية للفيديو</text>
+  <text x="90" y="188" fill="#0F172A" font-size="20" font-family="Cairo, Arial">تباين لوني عالٍ</text>
+  <text x="90" y="268" fill="#0F172A" font-size="20" font-family="Cairo, Arial">إشعارات بصرية</text>
+</svg>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "first-lesson",
+    "title": "أول خطوة",
+    "description": "أكملت أول جزء من محتوى المقرر",
+    "icon": "book"
+  },
+  {
+    "id": "module-1-done",
+    "title": "متقن الموديول الأول",
+    "description": "أنهيت محتوى الموديول الأول",
+    "icon": "star"
+  },
+  {
+    "id": "module-2-done",
+    "title": "متقن الموديول الثاني",
+    "description": "أنهيت محتوى الموديول الثاني",
+    "icon": "eye"
+  },
+  {
+    "id": "module-3-done",
+    "title": "متقن الموديول الثالث",
+    "description": "أنهيت محتوى الموديول الثالث",
+    "icon": "star"
+  },
+  {
+    "id": "quiz-master",
+    "title": "متميز في الاختبارات",
+    "description": "حققت درجة ٧٠٪ أو أعلى في اختبار",
+    "icon": "award"
+  },
+  {
+    "id": "achievement-master",
+    "title": "متفوق في الاختبار التحصيلي",
+    "description": "حققت ٩٠٪ أو أعلى في الاختبار التحصيلي",
+    "icon": "award"
+  },
+  {
+    "id": "course-complete",
+    "title": "إتمام المقرر",
+    "description": "أكملت الدروس والاختبارات القبلية والاختبار التحصيلي",
+    "icon": "flag"
+  }
+]

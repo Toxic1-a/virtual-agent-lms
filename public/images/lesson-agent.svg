@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#EFF6FF"/>
+  <rect x="60" y="70" width="320" height="220" rx="18" fill="#fff"/>
+  <rect x="90" y="110" width="260" height="16" rx="8" fill="#CBD5E1"/>
+  <rect x="90" y="146" width="220" height="16" rx="8" fill="#CBD5E1"/>
+  <rect x="90" y="182" width="240" height="16" rx="8" fill="#CBD5E1"/>
+  <circle cx="500" cy="160" r="55" fill="#2563EB"/>
+  <rect x="430" y="230" width="140" height="50" rx="16" fill="#fff" stroke="#E2E8F0"/>
+  <text x="500" y="260" text-anchor="middle" fill="#0F172A" font-size="14" font-family="Cairo, Arial">رسالة توجيه</text>
+</svg>

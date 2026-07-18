@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA: أي مسار يرجع لـ index.html حتى تعمل الروابط الداخلية بعد التحديث
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
