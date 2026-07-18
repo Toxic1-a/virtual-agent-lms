@@ -19,7 +19,7 @@ export default function App() {
       <AgentModeProvider>
         <ProgressProvider>
           <AgentCueProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
               <ScrollToTop />
               <Routes>
                 <Route path="/" element={<Home />} />

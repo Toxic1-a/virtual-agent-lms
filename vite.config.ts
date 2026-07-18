@@ -14,7 +14,10 @@ function cloudflareSpaFallback() {
   }
 }
 
+const pagesBase = process.env.GITHUB_PAGES === 'true' ? '/virtual-agent-lms/' : '/'
+
 export default defineConfig({
+  base: pagesBase,
   plugins: [react(), cloudflareSpaFallback()],
   server: {
     watch: {
