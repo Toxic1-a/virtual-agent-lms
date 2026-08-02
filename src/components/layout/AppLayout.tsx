@@ -44,11 +44,10 @@ export function AppLayout() {
             {motionUi.animated ? (
               <motion.div
                 animate={{
-                  y: [0, -18, 0],
-                  rotate: [0, 1.5, 0, -1.5, 0],
-                  scale: [1, 1.03, 1],
+                  y: [0, -8, 0],
+                  rotate: [0, 0.6, 0, -0.6, 0],
                 }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
                 className="agent-panel-live"
               >
                 <AgentController context={context} mood={mood} />

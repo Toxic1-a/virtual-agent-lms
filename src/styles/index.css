@@ -766,6 +766,88 @@
   }
 }
 
+/* Animated agent only — talk / celebrate VFX around the character shell */
+.agent-talking-glow {
+  box-shadow:
+    0 0 0 2px rgba(37, 99, 235, 0.28),
+    0 12px 32px rgba(37, 99, 235, 0.22);
+}
+
+.agent-celebrate-glow {
+  box-shadow:
+    0 0 0 2px rgba(20, 184, 166, 0.35),
+    0 14px 36px rgba(20, 184, 166, 0.25);
+}
+
+.agent-talk-ring,
+.agent-idle-ring {
+  border: 2px solid transparent;
+  opacity: 0.55;
+}
+
+.agent-talk-ring {
+  animation: agent-ring-pulse 1.15s ease-in-out infinite;
+  box-shadow: inset 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
+.agent-idle-ring {
+  animation: agent-ring-soft 3.4s ease-in-out infinite;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+}
+
+.agent-think-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #2563eb;
+  animation: agent-think-bounce 0.9s ease-in-out infinite;
+}
+
+@keyframes agent-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes agent-ring-soft {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes agent-think-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agent-talk-ring,
+  .agent-idle-ring,
+  .agent-think-dot,
+  .agent-talking-glow,
+  .agent-celebrate-glow {
+    animation: none !important;
+  }
+}
+
 @keyframes header-sheen {
   0%,
   100% {

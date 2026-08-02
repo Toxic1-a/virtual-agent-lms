@@ -29,9 +29,9 @@ export function ModuleCard({ module }: ModuleCardProps) {
       whileHover={motionUi.hover}
       whileTap={motionUi.tap}
       className="card flex h-full flex-col p-5"
-      onMouseEnter={() => showCue(hoverMessage)}
+      onMouseEnter={() => showCue(hoverMessage, { mood: 'pointing' })}
       onMouseLeave={() => clearCue()}
-      onFocusCapture={() => showCue(hoverMessage)}
+      onFocusCapture={() => showCue(hoverMessage, { mood: 'pointing' })}
       onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
           clearCue()

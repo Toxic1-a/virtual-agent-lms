@@ -1,5 +1,7 @@
-import { lazy, Suspense, useCallback, useState } from 'react'
+import { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { useAgentMode } from '../../hooks/useAgentMode'
+import { useAgentCue } from '../../context/AgentCueContext'
+import { useAnimatedAgentLifecycle } from '../../hooks/useAnimatedAgentLifecycle'
 import type { AgentMood } from './agentCharacters'
 import { AgentSpeech } from './AgentSpeech'
 import { StaticAgent } from './StaticAgent'
@@ -13,14 +15,43 @@ interface AgentControllerProps {
   mood?: AgentMood
 }
 
+function resolveMood(
+  pageMood: AgentMood,
+  cueMood: AgentMood | null,
+  flashMood: AgentMood | null,
+  speaking: boolean,
+): AgentMood {
+  if (flashMood) return flashMood
+  if (cueMood) return cueMood
+  if (speaking && pageMood === 'idle') return 'talk'
+  return pageMood
+}
+
 export function AgentController({ context, mood = 'idle' }: AgentControllerProps) {
   const mode = useAgentMode()
+  const {
+    cueMood,
+    flashMoodActive,
+    speechMuted,
+    setSpeechMuted,
+    replayLastCue,
+    lastMessage,
+  } = useAgentCue()
   const [speaking, setSpeaking] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
+
+  useAnimatedAgentLifecycle(context)
 
   const handleSpeakingChange = useCallback((value: boolean) => {
     setSpeaking(value)
   }, [])
+
+  const effectiveMood = useMemo(
+    () => resolveMood(mood, cueMood, flashMoodActive, speaking && !speechMuted),
+    [mood, cueMood, flashMoodActive, speaking, speechMuted],
+  )
+
+  const thinking = mode === 'animated' && (effectiveMood === 'think' || effectiveMood === 'explaining')
 
   return (
     <section
@@ -44,6 +75,30 @@ export function AgentController({ context, mood = 'idle' }: AgentControllerProps
         </div>
       </div>
 
+      {mode === 'animated' ? (
+        <div
+          data-agent-controls
+          className="flex flex-wrap items-center gap-1.5"
+        >
+          <button
+            type="button"
+            className="rounded-lg border border-secondary-100 bg-white px-2 py-1 text-[11px] font-semibold text-secondary-700 hover:border-primary/30 hover:text-primary"
+            aria-pressed={speechMuted}
+            onClick={() => setSpeechMuted(!speechMuted)}
+          >
+            {speechMuted ? 'إلغاء الصمت' : 'كتم الحديث'}
+          </button>
+          <button
+            type="button"
+            className="rounded-lg border border-secondary-100 bg-white px-2 py-1 text-[11px] font-semibold text-secondary-700 hover:border-primary/30 hover:text-primary disabled:opacity-40"
+            disabled={!lastMessage}
+            onClick={() => replayLastCue()}
+          >
+            إعادة التلميح
+          </button>
+        </div>
+      ) : null}
+
       <div className={collapsed ? 'hidden lg:block' : 'block'}>
         <div className="relative isolate overflow-visible">
           <div className="relative z-20 mx-auto mb-2 w-full max-w-[220px] sm:mb-3 sm:max-w-[260px] lg:max-w-[280px]">
@@ -59,7 +114,11 @@ export function AgentController({ context, mood = 'idle' }: AgentControllerProps
                   </div>
                 }
               >
-                <AnimatedAgent speaking={speaking} mood={mood} />
+                <AnimatedAgent
+                  speaking={speaking && !speechMuted}
+                  mood={effectiveMood}
+                  thinking={thinking && !speaking}
+                />
               </Suspense>
             ) : (
               <StaticAgent compact />

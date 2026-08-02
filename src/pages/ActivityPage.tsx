@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { ActivityRenderer } from '../components/activities/ActivityRenderer'
 import { PageShell } from '../components/layout/PageShell'
+import { useAgentCue } from '../context/AgentCueContext'
 import { useProgress } from '../context/ProgressContext'
 import { useActivity } from '../hooks/useCourseData'
 
@@ -9,6 +10,7 @@ export function ActivityPage() {
   const { activityId } = useParams()
   const activity = useActivity(activityId)
   const { markActivityComplete, isActivityComplete } = useProgress()
+  const { react } = useAgentCue()
   const [doneScore, setDoneScore] = useState<number | null>(null)
 
   if (!activity) {
@@ -33,10 +35,14 @@ export function ActivityPage() {
   const handleComplete = (score: number) => {
     markActivityComplete(activity.id, score)
     setDoneScore(score)
+    react(score >= 70 ? 'celebrating' : 'incorrect')
   }
 
   return (
-    <PageShell agentContext="activity">
+    <PageShell
+      agentContext="activity"
+      agentMood={doneScore !== null && doneScore >= 70 ? 'celebrating' : 'idle'}
+    >
       <div className="space-y-5">
         <header>
           <p className="text-sm font-bold text-accent">نشاط تفاعلي</p>

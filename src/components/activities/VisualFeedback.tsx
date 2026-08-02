@@ -1,4 +1,7 @@
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useAgentCue } from '../../context/AgentCueContext'
+import { useAgentMode } from '../../hooks/useAgentMode'
 
 interface VisualFeedbackProps {
   status: 'idle' | 'correct' | 'incorrect'
@@ -6,6 +9,18 @@ interface VisualFeedbackProps {
 }
 
 export function VisualFeedback({ status, message }: VisualFeedbackProps) {
+  const mode = useAgentMode()
+  const { react } = useAgentCue()
+  const lastStatus = useRef(status)
+
+  useEffect(() => {
+    if (mode !== 'animated') return
+    if (status === lastStatus.current) return
+    lastStatus.current = status
+    if (status === 'correct') react('correct')
+    if (status === 'incorrect') react('incorrect')
+  }, [mode, react, status])
+
   if (status === 'idle') return null
 
   const isCorrect = status === 'correct'

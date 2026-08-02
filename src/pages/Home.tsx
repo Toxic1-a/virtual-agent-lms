@@ -83,9 +83,9 @@ export function Home() {
                 <Link
                   to="/dashboard"
                   className="btn-primary cta-float"
-                  onMouseEnter={() => startCue && showCue(startCue)}
+                  onMouseEnter={() => startCue && showCue(startCue, { mood: 'pointing' })}
                   onMouseLeave={() => clearCue()}
-                  onFocus={() => startCue && showCue(startCue)}
+                  onFocus={() => startCue && showCue(startCue, { mood: 'pointing' })}
                   onBlur={() => clearCue()}
                 >
                   ابدأ التعلم
@@ -95,9 +95,9 @@ export function Home() {
                 <a
                   href="#about-course"
                   className="btn cta-float border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
-                  onMouseEnter={() => aboutCue && showCue(aboutCue)}
+                  onMouseEnter={() => aboutCue && showCue(aboutCue, { mood: 'explaining' })}
                   onMouseLeave={() => clearCue()}
-                  onFocus={() => aboutCue && showCue(aboutCue)}
+                  onFocus={() => aboutCue && showCue(aboutCue, { mood: 'explaining' })}
                   onBlur={() => clearCue()}
                 >
                   عن المقرر
@@ -107,9 +107,9 @@ export function Home() {
                 <Link
                   to="/authors"
                   className="btn cta-float border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
-                  onMouseEnter={() => authorsCue && showCue(authorsCue)}
+                  onMouseEnter={() => authorsCue && showCue(authorsCue, { mood: 'greeting' })}
                   onMouseLeave={() => clearCue()}
-                  onFocus={() => authorsCue && showCue(authorsCue)}
+                  onFocus={() => authorsCue && showCue(authorsCue, { mood: 'greeting' })}
                   onBlur={() => clearCue()}
                 >
                   من نحن

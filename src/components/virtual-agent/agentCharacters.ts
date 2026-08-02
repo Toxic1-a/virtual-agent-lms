@@ -1,6 +1,20 @@
 import { assetUrl } from '../../lib/assetUrl'
 
-export type AgentMood = 'idle' | 'talk' | 'happy' | 'think'
+/**
+ * High-level agent moods for the LMS personality layer.
+ * Rive face-tracking only exposes glasses/blush/tracking booleans — see moodToRiveExpression.
+ */
+export type AgentMood =
+  | 'idle'
+  | 'talk'
+  | 'happy'
+  | 'think'
+  | 'greeting'
+  | 'encouraging'
+  | 'pointing'
+  | 'explaining'
+  | 'celebrating'
+  | 'goodbye'
 
 export interface AgentCharacterConfig {
   src: string
@@ -8,6 +22,7 @@ export interface AgentCharacterConfig {
   /** Prefer state machine playback (e.g. face-tracking) */
   useStateMachine?: boolean
   stateMachine?: string
+  /** Named timeline clips available on the artboard (expression helpers, not lip-sync). */
   animations?: {
     idle?: string
     talk?: string

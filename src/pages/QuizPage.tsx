@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { PageShell } from '../components/layout/PageShell'
 import { QuestionCard } from '../components/quiz/QuestionCard'
 import { Score } from '../components/quiz/Score'
+import { useAgentCue } from '../context/AgentCueContext'
 import { useProgress } from '../context/ProgressContext'
 import { useSound } from '../context/SoundContext'
 import { useQuiz } from '../hooks/useCourseData'
@@ -16,6 +17,7 @@ export function QuizPage() {
   const quiz = useQuiz(quizId)
   const { markQuizComplete, getQuizResult } = useProgress()
   const { play } = useSound()
+  const { react } = useAgentCue()
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
   const [page, setPage] = useState(0)
@@ -120,6 +122,7 @@ export function QuizPage() {
     markQuizComplete({ quizId: quiz.id, score, total, percentage })
     clearQuizDraft(quiz.id)
     play(percentage >= quiz.passingScore ? 'success' : 'error')
+    react(percentage >= quiz.passingScore ? 'celebrating' : 'incorrect')
     setSubmitted(true)
     setRetake(false)
   }
@@ -136,10 +139,10 @@ export function QuizPage() {
 
   const agentMood =
     result && result.percentage >= quiz.passingScore
-      ? 'happy'
+      ? 'celebrating'
       : result
-        ? 'think'
-        : 'idle'
+        ? 'encouraging'
+        : 'think'
 
   if (isAchievement && showIntro && !revealed) {
     return (

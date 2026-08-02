@@ -7,37 +7,14 @@ import {
   Alignment,
 } from '@rive-app/react-canvas'
 import type { AgentCharacterConfig, AgentMood } from './agentCharacters'
+import { moodLabelAr, moodToRiveExpression } from '../../lib/agentReactions'
+import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 interface RiveAgentProps {
   character: AgentCharacterConfig
   mood?: AgentMood
   speaking?: boolean
   pointerEngaged?: boolean
-}
-
-function pickAnimation(
-  available: string[],
-  preferred?: string,
-  mood: AgentMood = 'idle',
-) {
-  if (preferred && available.includes(preferred)) return preferred
-
-  const lower = available.map((name) => name.toLowerCase())
-  const find = (...needles: string[]) => {
-    const idx = lower.findIndex((name) => needles.some((needle) => name.includes(needle)))
-    return idx >= 0 ? available[idx] : undefined
-  }
-
-  if (mood === 'talk') {
-    return find('talking', 'talk', 'speak') || available[0]
-  }
-  if (mood === 'happy') {
-    return find('gesture', 'happy', 'smile', 'wave') || find('idle') || available[0]
-  }
-  if (mood === 'think') {
-    return find('blink', 'think', 'idle') || available[0]
-  }
-  return find('gesture', 'idle', 'blink') || available[0]
 }
 
 /**
@@ -53,7 +30,6 @@ function mapPagePointerToCanvas(
   const centerX = rect.left + rect.width / 2
   const centerY = rect.top + rect.height / 2
 
-  // How far the mouse must travel from the face for a full look turn.
   const rangeX = Math.max(window.innerWidth * 0.42, rect.width * 2)
   const rangeY = Math.max(window.innerHeight * 0.42, rect.height * 2)
 
@@ -101,15 +77,33 @@ function dispatchCanvasPointer(
   return mapped
 }
 
+function resolveActiveMood(
+  mood: AgentMood,
+  speaking: boolean,
+  pointerEngaged: boolean,
+): AgentMood {
+  if (speaking) {
+    if (mood === 'celebrating' || mood === 'happy' || mood === 'greeting') return mood
+    if (mood === 'encouraging') return 'encouraging'
+    if (mood === 'think') return 'think'
+    return 'talk'
+  }
+  if (pointerEngaged && (mood === 'idle' || mood === 'pointing')) return 'happy'
+  return mood
+}
+
 export function RiveAgent({
   character,
   mood = 'idle',
   speaking = false,
   pointerEngaged = false,
 }: RiveAgentProps) {
-  const activeMood: AgentMood = speaking ? 'talk' : pointerEngaged ? 'happy' : mood
+  const reduced = useReducedMotion()
+  const activeMood = resolveActiveMood(mood, speaking, pointerEngaged)
+  const expression = moodToRiveExpression(activeMood)
   const containerRef = useRef<HTMLDivElement>(null)
   const stateMachineName = character.stateMachine || 'FaceTracking-StateMachine'
+  const talkPulseRef = useRef(false)
 
   const { rive, RiveComponent } = useRive({
     src: character.src,
@@ -144,15 +138,71 @@ export function RiveAgent({
     trackingInput.value = true
   }, [trackingInput])
 
+  // Smooth mood → glasses/blush (no lip-sync inputs exist on this .riv)
   useEffect(() => {
-    if (!glassesInput) return
-    glassesInput.value = speaking || pointerEngaged
-  }, [glassesInput, speaking, pointerEngaged])
+    if (!glassesInput && !blushInput) return
 
+    let glasses = expression.glasses
+    let blush = expression.blush
+
+    if (speaking) {
+      glasses = true
+      if (activeMood === 'celebrating' || activeMood === 'happy') blush = true
+    }
+
+    if (glassesInput) glassesInput.value = glasses
+    if (blushInput) blushInput.value = blush
+  }, [glassesInput, blushInput, expression.glasses, expression.blush, speaking, activeMood])
+
+  // While talking: gentle glasses pulse so mouth-less talk still feels alive
   useEffect(() => {
-    if (!blushInput) return
-    blushInput.value = activeMood === 'happy' || speaking
-  }, [blushInput, activeMood, speaking])
+    if (!glassesInput || reduced || !speaking) {
+      talkPulseRef.current = false
+      return
+    }
+
+    talkPulseRef.current = true
+    let on = true
+    const id = window.setInterval(() => {
+      if (!talkPulseRef.current || !glassesInput) return
+      on = !on
+      glassesInput.value = on
+    }, 420)
+
+    return () => {
+      talkPulseRef.current = false
+      window.clearInterval(id)
+      if (glassesInput) glassesInput.value = true
+    }
+  }, [glassesInput, speaking, reduced])
+
+  // Calm idle micro-expression: occasional blush flicker (stand-in for blink — no blink input)
+  useEffect(() => {
+    if (!blushInput || reduced || speaking) return
+    if (activeMood !== 'idle') return
+
+    const schedule = () => {
+      const wait = 5000 + Math.random() * 7000
+      return window.setTimeout(() => {
+        if (!blushInput) return
+        blushInput.value = true
+        window.setTimeout(() => {
+          if (blushInput && activeMood === 'idle') blushInput.value = false
+        }, 280)
+      }, wait)
+    }
+
+    let timer = schedule()
+    const loop = window.setInterval(() => {
+      window.clearTimeout(timer)
+      timer = schedule()
+    }, 12000)
+
+    return () => {
+      window.clearTimeout(timer)
+      window.clearInterval(loop)
+    }
+  }, [blushInput, reduced, speaking, activeMood])
 
   // Keep the face awake and follow the mouse anywhere on the page.
   useEffect(() => {
@@ -193,7 +243,6 @@ export function RiveAgent({
 
     rive.resizeDrawingSurfaceToCanvas()
 
-    const animationNames = [...(rive.animationNames ?? [])]
     const stateMachineNames = [...(rive.stateMachineNames ?? [])]
 
     try {
@@ -209,18 +258,6 @@ export function RiveAgent({
         const inputs = rive.stateMachineInputs(sm)
         const tracking = inputs?.find((input) => input.name === 'Parent-isTracking')
         if (tracking) tracking.value = true
-        return
-      }
-
-      const preferred = character.animations?.[activeMood] || character.animations?.idle
-      const chosen = pickAnimation(animationNames, preferred, activeMood)
-      if (chosen) {
-        rive.stop()
-        rive.play(chosen)
-      } else if (stateMachineNames[0]) {
-        rive.play(stateMachineNames[0])
-      } else {
-        rive.play()
       }
     } catch {
       try {
@@ -229,7 +266,7 @@ export function RiveAgent({
         /* ignore */
       }
     }
-  }, [rive, character, activeMood, stateMachineName])
+  }, [rive, character, stateMachineName])
 
   useEffect(() => {
     if (!rive) return
@@ -248,14 +285,7 @@ export function RiveAgent({
         <RiveComponent className="h-full w-full" style={{ width: '100%', height: '100%' }} />
       </div>
       <span className="sr-only">
-        الوكيل الافتراضي المتحرك — الحالة:{' '}
-        {activeMood === 'talk'
-          ? 'يتحدث'
-          : activeMood === 'happy'
-            ? 'سعيد'
-            : activeMood === 'think'
-              ? 'يفكر'
-              : 'انتظار'}
+        الوكيل الافتراضي المتحرك — الحالة: {moodLabelAr(activeMood)}
       </span>
     </div>
   )
