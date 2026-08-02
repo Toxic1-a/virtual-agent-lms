@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useAgentModeControls } from '../../hooks/useAgentMode'
 import { useProgress } from '../../context/ProgressContext'
 import { useSound } from '../../context/SoundContext'
 import { assetUrl } from '../../lib/assetUrl'
+import { useUiMotion } from '../../motion/useUiMotion'
 
 const links = [
   { to: '/', label: 'الرئيسية', end: true },
@@ -18,17 +20,24 @@ export function Header() {
   const { completionPercent } = useProgress()
   const { enabled: soundEnabled, setEnabled: setSoundEnabled } = useSound()
   const [open, setOpen] = useState(false)
+  const motionUi = useUiMotion()
 
   return (
     <header className="sticky top-0 z-40 border-b border-secondary-100 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img
+          <motion.img
             src={assetUrl('/images/logo-agent.svg')}
             alt=""
             width={40}
             height={40}
             className="logo-mark h-10 w-10 rounded-xl shadow-sm"
+            {...(motionUi.animated
+              ? {
+                  whileHover: { scale: 1.12, rotate: -8 },
+                  whileTap: { scale: 0.92 },
+                }
+              : {})}
           />
           <span>
             <span className="block text-sm font-bold text-secondary-900 sm:text-base">
@@ -38,21 +47,31 @@ export function Header() {
         </Link>
 
         <nav aria-label="القائمة الرئيسية" className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
-            <NavLink
+          {links.map((link, index) => (
+            <motion.div
               key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) =>
-                `rounded-lg px-3 py-2 text-sm font-semibold transition ${
-                  isActive
-                    ? 'bg-primary-50 text-primary'
-                    : 'text-secondary-700 hover:bg-secondary-50'
-                }`
-              }
+              {...(motionUi.animated
+                ? {
+                    initial: { opacity: 0, y: -8 },
+                    animate: { opacity: 1, y: 0 },
+                    transition: { delay: 0.05 * index, duration: 0.35 },
+                  }
+                : {})}
             >
-              {link.label}
-            </NavLink>
+              <NavLink
+                to={link.to}
+                end={link.end}
+                className={({ isActive }) =>
+                  `nav-link-live rounded-lg px-3 py-2 text-sm font-semibold transition ${
+                    isActive
+                      ? 'bg-primary-50 text-primary'
+                      : 'text-secondary-700 hover:bg-secondary-50'
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            </motion.div>
           ))}
         </nav>
 
@@ -97,10 +116,13 @@ export function Header() {
               </svg>
             )}
           </button>
-          <div
-            className="inline-flex items-center rounded-full border border-secondary-100 bg-secondary-50 p-1"
+          <motion.div
+            className={`mode-chip-live inline-flex items-center rounded-full border border-secondary-100 bg-secondary-50 p-1 ${
+              mode === 'animated' ? 'ring-2 ring-accent/30' : ''
+            }`}
             role="group"
             aria-label="تبديل نسخة الوكيل الافتراضي"
+            {...(motionUi.animated ? motionUi.pulse : {})}
           >
             <button
               type="button"
@@ -126,10 +148,19 @@ export function Header() {
             >
               ب متحرك
             </button>
-          </div>
-          <span className="hidden font-semibold text-primary sm:inline" aria-live="polite">
+          </motion.div>
+          <motion.span
+            className="hidden font-semibold text-primary sm:inline"
+            aria-live="polite"
+            {...(motionUi.animated
+              ? {
+                  animate: { scale: [1, 1.06, 1] },
+                  transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+                }
+              : {})}
+          >
             الإنجاز {completionPercent}%
-          </span>
+          </motion.span>
           <button
             type="button"
             className="btn-secondary px-3 py-2 md:hidden"

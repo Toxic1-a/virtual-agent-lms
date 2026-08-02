@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import type { AgentMood } from '../virtual-agent/agentCharacters'
 import { useUiMotion } from '../../motion/useUiMotion'
 import { AgentController } from '../virtual-agent/AgentController'
+import { AmbientMotion } from './AmbientMotion'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
@@ -24,9 +25,10 @@ export function PageShell({
   const motionUi = useUiMotion()
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative flex min-h-screen flex-col">
+      <AmbientMotion />
       <Header />
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         <div
           className={`mx-auto grid gap-4 px-4 py-6 sm:gap-6 sm:px-6 sm:py-8 ${
             wide || !showAgent
@@ -41,8 +43,12 @@ export function PageShell({
             <aside className="order-first lg:order-none lg:sticky lg:top-24 lg:self-start">
               {motionUi.animated ? (
                 <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={{
+                    y: [0, -10, 0],
+                    rotate: [0, 0.8, 0, -0.8, 0],
+                  }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="agent-panel-live"
                 >
                   <AgentController context={agentContext} mood={agentMood} />
                 </motion.div>

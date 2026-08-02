@@ -24,7 +24,7 @@ export function Home() {
             alt="تعلّم رقمي عبر الحاسوب في بيئة تعليمية حديثة"
             className="hero-visual h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-secondary-900/85 via-secondary-900/70 to-primary/55" />
+          <div className="absolute inset-0 bg-gradient-to-l from-secondary-900/85 via-secondary-900/70 to-primary/55 hero-overlay-live" />
         </div>
 
         <div className="relative z-10 px-5 py-12 sm:px-8 sm:py-16 lg:max-w-3xl">

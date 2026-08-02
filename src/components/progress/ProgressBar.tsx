@@ -23,7 +23,7 @@ export function ProgressBar({ value, label = 'نسبة الإنجاز' }: Progre
         aria-label={label}
       >
         <div
-          className="h-full rounded-full bg-primary transition-all duration-500"
+          className="progress-bar-fill h-full rounded-full bg-primary"
           style={{ width: `${safe}%` }}
         />
       </div>

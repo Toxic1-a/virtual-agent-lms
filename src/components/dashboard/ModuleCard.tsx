@@ -40,9 +40,12 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
       }}
     >
       <div className="mb-3 flex items-center justify-between gap-2">
-        <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary">
+        <motion.span
+          className="rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary"
+          {...(motionUi.animated ? motionUi.pulse : {})}
+        >
           الوحدة {module.order}
-        </span>
+        </motion.span>
         <span className="text-xs font-semibold text-secondary-600">{module.estimatedTime}</span>
       </div>
       <h3 className="text-lg font-bold text-secondary-900">{module.title}</h3>
@@ -55,7 +58,7 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
             {done}/{lessons.length} دروس — {percent}%
           </span>
         </div>
-        <div className="h-2 rounded-full bg-secondary-100">
+        <div className="h-2 overflow-hidden rounded-full bg-secondary-100">
           <div
             className="progress-bar-fill h-full rounded-full bg-accent"
             style={{ width: `${percent}%` }}
