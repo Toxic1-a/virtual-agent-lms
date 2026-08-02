@@ -1,6 +1,8 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { AppLayout } from './components/layout/AppLayout'
 import { ScrollToTop } from './components/layout/ScrollToTop'
 import { AgentCueProvider } from './context/AgentCueContext'
+import { AgentHostProvider } from './context/AgentHostContext'
 import { AgentModeProvider } from './context/AgentModeContext'
 import { ProgressProvider } from './context/ProgressContext'
 import { SoundProvider } from './context/SoundContext'
@@ -19,20 +21,24 @@ export default function App() {
       <AgentModeProvider>
         <ProgressProvider>
           <AgentCueProvider>
-            <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
-              <ScrollToTop />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/authors" element={<AuthorsPage />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/modules/:moduleId" element={<ModulePage />} />
-                <Route path="/lessons/:lessonId" element={<LessonPage />} />
-                <Route path="/activities/:activityId" element={<ActivityPage />} />
-                <Route path="/quizzes/:quizId" element={<QuizPage />} />
-                <Route path="/completion" element={<Completion />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
-              </Routes>
-            </BrowserRouter>
+            <HashRouter>
+              <AgentHostProvider>
+                <ScrollToTop />
+                <Routes>
+                  <Route element={<AppLayout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/authors" element={<AuthorsPage />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/modules/:moduleId" element={<ModulePage />} />
+                    <Route path="/lessons/:lessonId" element={<LessonPage />} />
+                    <Route path="/activities/:activityId" element={<ActivityPage />} />
+                    <Route path="/quizzes/:quizId" element={<QuizPage />} />
+                    <Route path="/completion" element={<Completion />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                  </Route>
+                </Routes>
+              </AgentHostProvider>
+            </HashRouter>
           </AgentCueProvider>
         </ProgressProvider>
       </AgentModeProvider>
