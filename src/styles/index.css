@@ -26,6 +26,94 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /*
+   * PROOF styles — ALWAYS apply in animated mode (NOT gated by prefers-reduced-motion).
+   * So the user can confirm ب متحرك works even if OS reduce-motion is on.
+   */
+  html.ui-alive .animated-mode-banner,
+  html[data-agent-mode='animated'] .animated-mode-banner {
+    display: block;
+    position: relative;
+    z-index: 60;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #052e16;
+    background: linear-gradient(90deg, #22c55e, #4ade80, #86efac, #4ade80, #22c55e);
+    background-size: 200% 100%;
+    border-bottom: 4px solid #166534;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
+  }
+
+  html:not(.ui-alive) .animated-mode-banner,
+  html[data-agent-mode='static'] .animated-mode-banner {
+    display: none !important;
+  }
+
+  .animated-mode-banner__warn {
+    display: inline;
+    font-weight: 700;
+    color: #7f1d1d;
+    background: #fef08a;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.35rem;
+  }
+
+  /* Extreme card hover — always on in animated mode */
+  html.ui-alive .card,
+  html.ui-alive .interactive-surface,
+  html.ui-alive main .rounded-card.border,
+  html.ui-alive main .shadow-card,
+  html[data-agent-mode='animated'] .card,
+  html[data-agent-mode='animated'] .interactive-surface,
+  html[data-agent-mode='animated'] main .rounded-card.border,
+  html[data-agent-mode='animated'] main .shadow-card {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms ease,
+      border-color 220ms ease,
+      outline-color 220ms ease !important;
+  }
+
+  html.ui-alive .card:hover,
+  html.ui-alive .interactive-surface:hover,
+  html.ui-alive .interactive-surface:focus-within,
+  html.ui-alive main article.card:hover,
+  html.ui-alive main section.card:hover,
+  html.ui-alive a.card:hover,
+  html.ui-alive main .rounded-card.border:hover,
+  html.ui-alive main .shadow-card:hover,
+  html.ui-alive main .rounded-card.shadow-card:hover,
+  html[data-agent-mode='animated'] .card:hover,
+  html[data-agent-mode='animated'] .interactive-surface:hover,
+  html[data-agent-mode='animated'] .interactive-surface:focus-within,
+  html[data-agent-mode='animated'] main article.card:hover,
+  html[data-agent-mode='animated'] main section.card:hover,
+  html[data-agent-mode='animated'] a.card:hover,
+  html[data-agent-mode='animated'] main .rounded-card.border:hover,
+  html[data-agent-mode='animated'] main .shadow-card:hover,
+  html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
+    transform: translateY(-16px) scale(1.06) !important;
+    border-color: #22c55e !important;
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+    box-shadow:
+      0 0 0 4px rgba(34, 197, 94, 0.35),
+      0 28px 56px rgba(34, 197, 94, 0.35),
+      0 32px 64px rgba(15, 23, 42, 0.28) !important;
+    z-index: 2;
+    animation-play-state: paused;
+  }
+
+  html.ui-alive body,
+  html[data-agent-mode='animated'] body {
+    outline: 6px solid #22c55e;
+    outline-offset: -6px;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     button:not(:disabled),
     .btn {
@@ -107,7 +195,13 @@
     html[data-agent-mode='animated'] main .shadow-card:hover,
     html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
       transform: translateY(-16px) scale(1.06);
-      box-shadow: 0 32px 64px rgba(15, 23, 42, 0.26);
+      border-color: #22c55e;
+      outline: 3px solid #4ade80;
+      outline-offset: 2px;
+      box-shadow:
+        0 0 0 4px rgba(34, 197, 94, 0.35),
+        0 28px 56px rgba(34, 197, 94, 0.35),
+        0 32px 64px rgba(15, 23, 42, 0.28);
       animation-play-state: paused;
       z-index: 2;
     }
