@@ -105,7 +105,10 @@ export function buildReaction(kind: AgentReactionKind, salt?: number): AgentReac
   }
 }
 
-/** Map high-level moods onto the three Rive boolean inputs we actually have. */
+/**
+ * Map high-level moods onto Rive booleans.
+ * Glasses stay off: lens glare is baked into the .riv glasses artwork.
+ */
 export function moodToRiveExpression(mood: AgentMood): {
   glasses: boolean
   blush: boolean
@@ -114,13 +117,11 @@ export function moodToRiveExpression(mood: AgentMood): {
     case 'talk':
     case 'explaining':
     case 'pointing':
-      return { glasses: true, blush: false }
     case 'think':
-      return { glasses: true, blush: false }
+      return { glasses: false, blush: false }
     case 'happy':
     case 'greeting':
     case 'celebrating':
-      return { glasses: true, blush: true }
     case 'encouraging':
     case 'goodbye':
       return { glasses: false, blush: true }

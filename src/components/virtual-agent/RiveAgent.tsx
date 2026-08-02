@@ -103,8 +103,6 @@ export function RiveAgent({
   const expression = moodToRiveExpression(activeMood)
   const containerRef = useRef<HTMLDivElement>(null)
   const stateMachineName = character.stateMachine || 'FaceTracking-StateMachine'
-  const talkPulseRef = useRef(false)
-
   const { rive, RiveComponent } = useRive({
     src: character.src,
     artboard: character.artboard,
@@ -138,43 +136,22 @@ export function RiveAgent({
     trackingInput.value = true
   }, [trackingInput])
 
-  // Smooth mood → glasses/blush (no lip-sync inputs exist on this .riv)
+  // Glasses art in this .riv includes baked diagonal lens glare — keep off always.
+  // Expressions use blush only. Artboard also draws BLUSH/GLASSES toggle UI (cropped in JSX).
   useEffect(() => {
-    if (!glassesInput && !blushInput) return
+    if (glassesInput) glassesInput.value = false
+  }, [glassesInput])
 
-    let glasses = expression.glasses
+  useEffect(() => {
+    if (!blushInput) return
+
     let blush = expression.blush
-
-    if (speaking) {
-      glasses = true
-      if (activeMood === 'celebrating' || activeMood === 'happy') blush = true
+    if (speaking && (activeMood === 'celebrating' || activeMood === 'happy')) {
+      blush = true
     }
 
-    if (glassesInput) glassesInput.value = glasses
-    if (blushInput) blushInput.value = blush
-  }, [glassesInput, blushInput, expression.glasses, expression.blush, speaking, activeMood])
-
-  // While talking: gentle glasses pulse so mouth-less talk still feels alive
-  useEffect(() => {
-    if (!glassesInput || reduced || !speaking) {
-      talkPulseRef.current = false
-      return
-    }
-
-    talkPulseRef.current = true
-    let on = true
-    const id = window.setInterval(() => {
-      if (!talkPulseRef.current || !glassesInput) return
-      on = !on
-      glassesInput.value = on
-    }, 420)
-
-    return () => {
-      talkPulseRef.current = false
-      window.clearInterval(id)
-      if (glassesInput) glassesInput.value = true
-    }
-  }, [glassesInput, speaking, reduced])
+    blushInput.value = blush
+  }, [blushInput, expression.blush, speaking, activeMood])
 
   // Calm idle micro-expression: occasional blush flicker (stand-in for blink — no blink input)
   useEffect(() => {
@@ -281,8 +258,11 @@ export function RiveAgent({
 
   return (
     <div className="mx-auto w-full max-w-[200px] sm:max-w-[260px] lg:max-w-[300px]" ref={containerRef}>
+      {/* Scale+clip hides artboard BLUSH/GLASSES demo toggles at the bottom of the .riv */}
       <div className="relative h-48 w-full overflow-hidden rounded-xl bg-gradient-to-b from-[#DCEBFF] to-[#F7FBFF] sm:h-60 lg:h-72">
-        <RiveComponent className="h-full w-full" style={{ width: '100%', height: '100%' }} />
+        <div className="absolute inset-0 origin-center scale-[1.18] translate-y-[-6%]">
+          <RiveComponent className="h-full w-full" style={{ width: '100%', height: '100%' }} />
+        </div>
       </div>
       <span className="sr-only">
         الوكيل الافتراضي المتحرك — الحالة: {moodLabelAr(activeMood)}

@@ -2,7 +2,8 @@ import { assetUrl } from '../../lib/assetUrl'
 
 /**
  * High-level agent moods for the LMS personality layer.
- * Rive face-tracking only exposes glasses/blush/tracking booleans — see moodToRiveExpression.
+ * Rive face-tracking exposes glasses/blush/tracking booleans — glasses kept off
+ * (baked lens glare). Artboard also includes demo BLUSH/GLASSES toggles (cropped in RiveAgent).
  */
 export type AgentMood =
   | 'idle'

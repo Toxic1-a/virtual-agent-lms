@@ -56,15 +56,6 @@ export function AnimatedAgent({
                 }
         }
       >
-        {!reduced && (
-          <span
-            className={`pointer-events-none absolute inset-3 rounded-full ${
-              speaking ? 'agent-talk-ring' : 'agent-idle-ring'
-            }`}
-            aria-hidden
-          />
-        )}
-
         <RiveAgent
           character={ANIMATED_AGENT_CHARACTER}
           speaking={speaking}
