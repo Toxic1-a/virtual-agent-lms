@@ -53,7 +53,7 @@ export function DragDrop({ items, zones, onComplete }: DragDropProps) {
             onDrop={() => {
               if (dragging) assign(dragging, zone.id)
             }}
-            className="min-h-36 rounded-card border border-dashed border-secondary-100 bg-white p-3"
+            className="interactive-surface min-h-36 rounded-card border border-dashed border-secondary-100 bg-white p-3"
           >
             <p className="mb-2 text-sm font-bold text-secondary-900">{zone.label}</p>
             <div className="space-y-2">

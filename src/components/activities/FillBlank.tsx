@@ -31,7 +31,7 @@ export function FillBlank({ blanks, onComplete }: FillBlankProps) {
   return (
     <div className="space-y-4">
       {blanks.map((blank) => (
-        <div key={blank.id} className="rounded-card border border-secondary-100 bg-white p-4">
+        <div key={blank.id} className="interactive-surface rounded-card border border-secondary-100 bg-white p-4">
           <p className="mb-3 leading-8 text-secondary-800">{blank.sentence}</p>
           <label className="block text-sm font-semibold text-secondary-700" htmlFor={`blank-${blank.id}`}>
             إجابتك

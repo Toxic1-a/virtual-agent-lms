@@ -41,7 +41,7 @@ export function Sorting({ items, onComplete }: SortingProps) {
           return (
             <li
               key={id}
-              className="flex items-center justify-between gap-3 rounded-card border border-secondary-100 bg-white p-3"
+              className="interactive-surface flex items-center justify-between gap-3 rounded-card border border-secondary-100 bg-white p-3"
             >
               <span className="font-semibold text-secondary-900">
                 {index + 1}. {item.text}

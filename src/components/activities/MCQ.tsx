@@ -29,7 +29,7 @@ export function MCQ({ options, onComplete }: MCQProps) {
         {options.map((option) => (
           <label
             key={option.id}
-            className={`flex cursor-pointer items-start gap-3 rounded-card border p-4 transition ${
+            className={`interactive-surface flex cursor-pointer items-start gap-3 rounded-card border p-4 transition ${
               selected === option.id
                 ? 'border-primary bg-primary-50'
                 : 'border-secondary-100 bg-white hover:border-primary/30'

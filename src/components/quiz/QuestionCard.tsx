@@ -24,7 +24,12 @@ export function QuestionCard({
   const motionUi = useUiMotion()
 
   return (
-    <motion.article {...motionUi.item(Math.min(index, 8))} className="card space-y-4 p-5">
+    <motion.article
+      {...motionUi.item(Math.min(index, 8))}
+      whileHover={motionUi.hover}
+      whileTap={motionUi.tap}
+      className="card space-y-4 p-5"
+    >
       <div className="flex items-center justify-between text-sm font-semibold text-secondary-600">
         <span>
           السؤال {index + 1} من {total}
@@ -64,8 +69,9 @@ export function QuestionCard({
               <motion.label
                 key={option.id}
                 {...motionUi.item(optionIndex)}
-                whileHover={motionUi.animated && !revealed ? { scale: 1.01, x: -2 } : undefined}
-                className={`flex cursor-pointer items-start gap-3 rounded-card border p-4 transition ${stateClass}`}
+                whileHover={motionUi.animated && !revealed ? motionUi.optionHover : undefined}
+                whileTap={motionUi.animated && !revealed ? motionUi.tap : undefined}
+                className={`interactive-surface flex cursor-pointer items-start gap-3 rounded-card border p-4 transition ${stateClass}`}
               >
                 <input
                   type="radio"

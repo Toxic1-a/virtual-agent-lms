@@ -103,7 +103,19 @@ export function useUiMotion() {
     pulse,
     navBounce,
     hover: on
-      ? { y: -16, scale: 1.05, rotate: -1.2, transition: springSoft }
+      ? { y: -18, scale: 1.06, rotate: -1.5, transition: springSoft }
+      : undefined,
+    optionHover: on
+      ? { y: -8, scale: 1.035, x: -4, rotate: -0.8, transition: springSoft }
+      : undefined,
+    btnHover: on
+      ? {
+          y: -6,
+          scale: 1.05,
+          skewX: -1.2,
+          borderRadius: '1.5rem',
+          transition: springSoft,
+        }
       : undefined,
     tap: on ? { scale: 0.92, rotate: 1 } : undefined,
   }

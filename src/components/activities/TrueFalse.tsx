@@ -21,7 +21,7 @@ export function TrueFalse({ statement, correct, onComplete }: TrueFalseProps) {
 
   return (
     <div className="space-y-4">
-      <p className="rounded-card border border-secondary-100 bg-white p-5 text-lg font-semibold leading-8 text-secondary-900">
+      <p className="interactive-surface rounded-card border border-secondary-100 bg-white p-5 text-lg font-semibold leading-8 text-secondary-900">
         {statement}
       </p>
       <div className="flex flex-wrap gap-3">

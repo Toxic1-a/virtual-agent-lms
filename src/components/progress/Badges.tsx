@@ -20,7 +20,7 @@ export function Badges() {
         return (
           <div
             key={badge.id}
-            className={`rounded-card border p-4 shadow-card transition ${
+            className={`interactive-surface rounded-card border p-4 shadow-card transition ${
               earned
                 ? 'border-accent/40 bg-accent-50'
                 : 'border-secondary-100 bg-white opacity-70'

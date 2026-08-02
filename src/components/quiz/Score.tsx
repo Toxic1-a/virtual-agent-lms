@@ -10,7 +10,7 @@ export function Score({ score, total, percentage, passingScore }: ScoreProps) {
 
   return (
     <div
-      className={`rounded-card border p-5 ${
+      className={`interactive-surface rounded-card border p-5 ${
         passed ? 'border-accent/40 bg-accent-50' : 'border-red-200 bg-red-50'
       }`}
       role="status"

@@ -26,7 +26,7 @@ export function Matching({ pairs, onComplete }: MatchingProps) {
   return (
     <div className="space-y-4">
       {pairs.map((pair) => (
-        <div key={pair.id} className="grid gap-3 rounded-card border border-secondary-100 bg-white p-4 sm:grid-cols-2">
+        <div key={pair.id} className="interactive-surface grid gap-3 rounded-card border border-secondary-100 bg-white p-4 sm:grid-cols-2">
           <p className="font-semibold text-secondary-900">{pair.left}</p>
           <label className="sr-only" htmlFor={`match-${pair.id}`}>
             مطابقة لـ {pair.left}
