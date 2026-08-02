@@ -72,6 +72,75 @@
     animation-play-state: paused;
   }
 
+  /* Buttons: same strong hover as cards — always on in animated mode */
+  html.ui-alive .btn,
+  html.ui-alive .btn-primary,
+  html.ui-alive .btn-secondary,
+  html.ui-alive .btn-accent,
+  html.ui-alive a.btn,
+  html.ui-alive a.btn-primary,
+  html.ui-alive a.btn-secondary,
+  html.ui-alive a.btn-accent,
+  html.ui-alive button.btn,
+  html.ui-alive button.btn-primary,
+  html.ui-alive button.btn-secondary,
+  html.ui-alive button.btn-accent,
+  html[data-agent-mode='animated'] .btn,
+  html[data-agent-mode='animated'] .btn-primary,
+  html[data-agent-mode='animated'] .btn-secondary,
+  html[data-agent-mode='animated'] .btn-accent,
+  html[data-agent-mode='animated'] a.btn,
+  html[data-agent-mode='animated'] a.btn-primary,
+  html[data-agent-mode='animated'] a.btn-secondary,
+  html[data-agent-mode='animated'] a.btn-accent,
+  html[data-agent-mode='animated'] button.btn,
+  html[data-agent-mode='animated'] button.btn-primary,
+  html[data-agent-mode='animated'] button.btn-secondary,
+  html[data-agent-mode='animated'] button.btn-accent {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms ease,
+      border-color 220ms ease,
+      outline-color 220ms ease !important;
+  }
+
+  html.ui-alive .btn:hover,
+  html.ui-alive .btn-primary:hover,
+  html.ui-alive .btn-secondary:hover,
+  html.ui-alive .btn-accent:hover,
+  html.ui-alive a.btn:hover,
+  html.ui-alive a.btn-primary:hover,
+  html.ui-alive a.btn-secondary:hover,
+  html.ui-alive a.btn-accent:hover,
+  html.ui-alive button.btn:hover,
+  html.ui-alive button.btn-primary:hover,
+  html.ui-alive button.btn-secondary:hover,
+  html.ui-alive button.btn-accent:hover,
+  html[data-agent-mode='animated'] .btn:hover,
+  html[data-agent-mode='animated'] .btn-primary:hover,
+  html[data-agent-mode='animated'] .btn-secondary:hover,
+  html[data-agent-mode='animated'] .btn-accent:hover,
+  html[data-agent-mode='animated'] a.btn:hover,
+  html[data-agent-mode='animated'] a.btn-primary:hover,
+  html[data-agent-mode='animated'] a.btn-secondary:hover,
+  html[data-agent-mode='animated'] a.btn-accent:hover,
+  html[data-agent-mode='animated'] button.btn:hover,
+  html[data-agent-mode='animated'] button.btn-primary:hover,
+  html[data-agent-mode='animated'] button.btn-secondary:hover,
+  html[data-agent-mode='animated'] button.btn-accent:hover {
+    transform: translateY(-16px) scale(1.06) !important;
+    border-color: #22c55e !important;
+    outline: 3px solid #4ade80;
+    outline-offset: 2px;
+    box-shadow:
+      0 0 0 4px rgba(34, 197, 94, 0.35),
+      0 28px 56px rgba(34, 197, 94, 0.35),
+      0 32px 64px rgba(15, 23, 42, 0.28) !important;
+    z-index: 2;
+    animation-play-state: paused;
+    filter: none;
+  }
+
   @media (max-width: 768px), (pointer: coarse) {
     html.ui-alive .card:hover,
     html.ui-alive .interactive-surface:hover,
@@ -91,6 +160,39 @@
     html[data-agent-mode='animated'] main .rounded-card.border:hover,
     html[data-agent-mode='animated'] main .shadow-card:hover,
     html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
+      transform: translateY(-6px) scale(1.02) !important;
+      outline: 2px solid #4ade80;
+      outline-offset: 1px;
+      box-shadow:
+        0 0 0 2px rgba(34, 197, 94, 0.28),
+        0 14px 28px rgba(15, 23, 42, 0.16) !important;
+      filter: none !important;
+    }
+
+    html.ui-alive .btn:hover,
+    html.ui-alive .btn-primary:hover,
+    html.ui-alive .btn-secondary:hover,
+    html.ui-alive .btn-accent:hover,
+    html.ui-alive a.btn:hover,
+    html.ui-alive a.btn-primary:hover,
+    html.ui-alive a.btn-secondary:hover,
+    html.ui-alive a.btn-accent:hover,
+    html.ui-alive button.btn:hover,
+    html.ui-alive button.btn-primary:hover,
+    html.ui-alive button.btn-secondary:hover,
+    html.ui-alive button.btn-accent:hover,
+    html[data-agent-mode='animated'] .btn:hover,
+    html[data-agent-mode='animated'] .btn-primary:hover,
+    html[data-agent-mode='animated'] .btn-secondary:hover,
+    html[data-agent-mode='animated'] .btn-accent:hover,
+    html[data-agent-mode='animated'] a.btn:hover,
+    html[data-agent-mode='animated'] a.btn-primary:hover,
+    html[data-agent-mode='animated'] a.btn-secondary:hover,
+    html[data-agent-mode='animated'] a.btn-accent:hover,
+    html[data-agent-mode='animated'] button.btn:hover,
+    html[data-agent-mode='animated'] button.btn-primary:hover,
+    html[data-agent-mode='animated'] button.btn-secondary:hover,
+    html[data-agent-mode='animated'] button.btn-accent:hover {
       transform: translateY(-6px) scale(1.02) !important;
       outline: 2px solid #4ade80;
       outline-offset: 1px;
@@ -236,7 +338,7 @@
       transform: translateY(-12px) scale(1.04);
     }
 
-    /* Buttons: shape morph + stronger lift on hover */
+    /* Buttons: idle animations; hover lift/glow handled above (matches cards) */
     html.ui-alive .btn,
     html.ui-alive .btn-primary,
     html.ui-alive .btn-secondary,
@@ -247,13 +349,12 @@
     html[data-agent-mode='animated'] .btn-accent {
       transition:
         transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
-        border-radius 260ms ease,
         box-shadow 220ms ease,
         background-color 180ms ease,
         border-color 180ms ease,
         color 180ms ease,
-        filter 220ms ease;
-      will-change: transform, border-radius;
+        outline-color 220ms ease;
+      will-change: transform, box-shadow;
     }
 
     html.ui-alive .btn-primary,
@@ -267,41 +368,9 @@
         btn-bob 2s ease-in-out infinite;
     }
 
-    html.ui-alive .btn:hover,
-    html.ui-alive .btn-primary:hover,
-    html.ui-alive .btn-secondary:hover,
-    html.ui-alive .btn-accent:hover,
-    html.ui-alive a.btn:hover,
-    html.ui-alive a.btn-primary:hover,
-    html.ui-alive a.btn-secondary:hover,
-    html.ui-alive a.btn-accent:hover,
-    html[data-agent-mode='animated'] .btn:hover,
-    html[data-agent-mode='animated'] .btn-primary:hover,
-    html[data-agent-mode='animated'] .btn-secondary:hover,
-    html[data-agent-mode='animated'] .btn-accent:hover,
-    html[data-agent-mode='animated'] a.btn:hover,
-    html[data-agent-mode='animated'] a.btn-primary:hover,
-    html[data-agent-mode='animated'] a.btn-secondary:hover,
-    html[data-agent-mode='animated'] a.btn-accent:hover {
-      transform: translateY(-6px) scale(1.05) skewX(-1.2deg);
-      border-radius: 1.5rem;
-      animation-play-state: paused;
-      filter: brightness(1.06);
-    }
-
-    html.ui-alive .btn-primary:hover,
-    html[data-agent-mode='animated'] .btn-primary:hover {
-      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.45);
-    }
-
     html.ui-alive .btn-secondary,
     html[data-agent-mode='animated'] .btn-secondary {
       animation: secondary-nudge 2.2s ease-in-out infinite;
-    }
-
-    html.ui-alive .btn-secondary:hover,
-    html[data-agent-mode='animated'] .btn-secondary:hover {
-      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
     }
 
     html.ui-alive .btn-accent,
@@ -309,11 +378,6 @@
       animation:
         accent-pulse 1.8s ease-in-out infinite,
         btn-bob 2.4s ease-in-out infinite;
-    }
-
-    html.ui-alive .btn-accent:hover,
-    html[data-agent-mode='animated'] .btn-accent:hover {
-      box-shadow: 0 16px 36px rgba(20, 184, 166, 0.42);
     }
 
     html.ui-alive .cta-float,
@@ -681,9 +745,13 @@
       html[data-agent-mode='animated'] .btn-secondary:hover,
       html[data-agent-mode='animated'] .btn-accent:hover,
       html[data-agent-mode='animated'] a.btn:hover {
-        transform: translateY(-2px) scale(1.02) !important;
+        transform: translateY(-6px) scale(1.02) !important;
+        outline: 2px solid #4ade80;
+        outline-offset: 1px;
+        box-shadow:
+          0 0 0 2px rgba(34, 197, 94, 0.28),
+          0 14px 28px rgba(15, 23, 42, 0.16) !important;
         filter: none !important;
-        skew: none !important;
       }
 
       html.ui-alive fieldset label:hover,
