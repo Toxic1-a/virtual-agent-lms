@@ -32,12 +32,8 @@ export function Header() {
             width={40}
             height={40}
             className="logo-mark h-10 w-10 rounded-xl shadow-sm"
-            {...(motionUi.animated
-              ? {
-                  whileHover: { scale: 1.12, rotate: -8 },
-                  whileTap: { scale: 0.92 },
-                }
-              : {})}
+            whileHover={motionUi.hover}
+            whileTap={motionUi.tap}
           />
           <span>
             <span className="block text-sm font-bold text-secondary-900 sm:text-base">

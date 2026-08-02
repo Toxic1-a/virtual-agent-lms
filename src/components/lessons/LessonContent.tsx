@@ -47,12 +47,17 @@ export function LessonContent({ lesson }: LessonContentProps) {
       </motion.div>
 
       {lesson.images.length > 0 ? (
-        <div className="grid gap-4 sm:grid-cols-2">
-          {lesson.images.map((image, index) => (
+        <motion.div
+          className="grid gap-4 sm:grid-cols-2"
+          variants={motionUi.staggerContainer}
+          {...motionUi.staggerProps}
+        >
+          {lesson.images.map((image) => (
             <motion.figure
               key={image.id}
-              {...motionUi.item(index)}
+              variants={motionUi.staggerItem}
               whileHover={motionUi.hover}
+              whileTap={motionUi.tap}
               className="card overflow-hidden"
             >
               <img
@@ -65,7 +70,7 @@ export function LessonContent({ lesson }: LessonContentProps) {
               ) : null}
             </motion.figure>
           ))}
-        </div>
+        </motion.div>
       ) : null}
 
       {lesson.downloads.length > 0 ? (

@@ -49,18 +49,22 @@ export function ModulePage() {
             <p className="text-sm text-secondary-600">
               عزيزي الطالب/ عزيزتي الطالبة، بعد دراستك لهذا الموديول يجب أن تكون قادراً على أن:
             </p>
-            <ul className="space-y-2">
-              {module.objectives.map((objective, index) => (
+            <motion.ul
+              className="space-y-2"
+              variants={motionUi.staggerContainer}
+              {...motionUi.staggerProps}
+            >
+              {module.objectives.map((objective) => (
                 <motion.li
                   key={objective}
-                  {...motionUi.item(index + 2)}
+                  variants={motionUi.staggerItem}
                   className="flex gap-2 text-sm leading-7 text-secondary-800"
                 >
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden />
                   <span>{objective}</span>
                 </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </motion.section>
         ) : null}
 
@@ -68,6 +72,7 @@ export function ModulePage() {
           <motion.section
             {...motionUi.item(2)}
             whileHover={motionUi.hover}
+            whileTap={motionUi.tap}
             className="card flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
@@ -78,9 +83,11 @@ export function ModulePage() {
                   : 'ابدأ بالاختبار القبلي قبل دراسة محتوى الموديول.'}
               </p>
             </div>
-            <Link to={`/quizzes/${module.preQuizId}`} className="btn-primary">
-              {pretestDone ? 'مراجعة الاختبار القبلي' : 'بدء الاختبار القبلي'}
-            </Link>
+            <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap}>
+              <Link to={`/quizzes/${module.preQuizId}`} className="btn-primary">
+                {pretestDone ? 'مراجعة الاختبار القبلي' : 'بدء الاختبار القبلي'}
+              </Link>
+            </motion.div>
           </motion.section>
         ) : null}
 
@@ -88,14 +95,19 @@ export function ModulePage() {
           <h2 id="lessons-list-title" className="section-title">
             محتوى الموديول
           </h2>
-          <ol className="space-y-3">
-            {lessons.map((lesson, index) => {
+          <motion.ol
+            className="space-y-3"
+            variants={motionUi.staggerContainer}
+            {...motionUi.staggerProps}
+          >
+            {lessons.map((lesson) => {
               const done = isLessonComplete(lesson.id)
               return (
                 <motion.li
                   key={lesson.id}
-                  {...motionUi.item(index)}
+                  variants={motionUi.staggerItem}
                   whileHover={motionUi.hover}
+                  whileTap={motionUi.tap}
                   className="card flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div>
@@ -105,18 +117,22 @@ export function ModulePage() {
                       {done ? 'مكتمل' : 'لم يُكمل بعد'}
                     </p>
                   </div>
-                  <Link to={`/lessons/${lesson.id}`} className="btn-primary">
-                    {done ? 'مراجعة' : 'ابدأ'}
-                  </Link>
+                  <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap}>
+                    <Link to={`/lessons/${lesson.id}`} className="btn-primary">
+                      {done ? 'مراجعة' : 'ابدأ'}
+                    </Link>
+                  </motion.div>
                 </motion.li>
               )
             })}
-          </ol>
+          </motion.ol>
         </section>
 
-        <Link to="/dashboard" className="btn-secondary inline-flex">
-          العودة للوحة المقرر
-        </Link>
+        <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap} className="inline-flex">
+          <Link to="/dashboard" className="btn-secondary inline-flex">
+            العودة للوحة المقرر
+          </Link>
+        </motion.div>
       </div>
     </PageShell>
   )

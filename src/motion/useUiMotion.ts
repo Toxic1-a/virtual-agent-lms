@@ -1,16 +1,21 @@
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useAgentMode } from '../hooks/useAgentMode'
+import {
+  staggerContainer,
+  staggerContainerStatic,
+  staggerItem,
+  staggerItemStatic,
+} from '../lib/motionVariants'
 
 const easeOut = [0.16, 1, 0.3, 1] as const
-const springSoft = { type: 'spring', stiffness: 340, damping: 16 } as const
+const pressTransition = { duration: 0.15, ease: 'easeOut' } as const
 
-/** Shared UI motion: dramatic when animated mode, frozen when static. */
+/** Shared UI motion: dramatic when animated mode, frozen when static / reduced-motion. */
 export function useUiMotion() {
   const mode = useAgentMode()
+  const reduced = useReducedMotion()
   const animated = mode === 'animated'
-  const reduce =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const on = animated && !reduce
+  const on = animated && !reduced
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const page: any = on
@@ -97,26 +102,21 @@ export function useUiMotion() {
   return {
     mode,
     animated: on,
+    reduced,
     page,
     item,
     float,
     pulse,
     navBounce,
-    hover: on
-      ? { y: -18, scale: 1.06, rotate: -1.5, transition: springSoft }
-      : undefined,
-    optionHover: on
-      ? { y: -8, scale: 1.035, x: -4, rotate: -0.8, transition: springSoft }
-      : undefined,
-    btnHover: on
-      ? {
-          y: -6,
-          scale: 1.05,
-          skewX: -1.2,
-          borderRadius: '1.5rem',
-          transition: springSoft,
-        }
-      : undefined,
-    tap: on ? { scale: 0.92, rotate: 1 } : undefined,
+    /** Global press feedback: transform/opacity only, ~0.15s */
+    hover: on ? { scale: 1.03, transition: pressTransition } : undefined,
+    optionHover: on ? { scale: 1.03, x: -2, transition: pressTransition } : undefined,
+    btnHover: on ? { scale: 1.03, transition: pressTransition } : undefined,
+    tap: on ? { scale: 0.97, transition: pressTransition } : undefined,
+    staggerContainer: on ? staggerContainer : staggerContainerStatic,
+    staggerItem: on ? staggerItem : staggerItemStatic,
+    staggerProps: on
+      ? { initial: 'hidden' as const, whileInView: 'visible' as const, viewport: { once: true, amount: 0.15 } }
+      : { initial: false as const, animate: 'visible' as const },
   }
 }

@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion'
 import { useBadges } from '../../hooks/useCourseData'
 import { useProgress } from '../../context/ProgressContext'
+import { useUiMotion } from '../../motion/useUiMotion'
 
 const iconMap: Record<string, string> = {
   book: 'ب',
@@ -12,14 +14,22 @@ const iconMap: Record<string, string> = {
 export function Badges() {
   const badges = useBadges()
   const { hasBadge } = useProgress()
+  const motionUi = useUiMotion()
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <motion.div
+      className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
+      variants={motionUi.staggerContainer}
+      {...motionUi.staggerProps}
+    >
       {badges.map((badge) => {
         const earned = hasBadge(badge.id)
         return (
-          <div
+          <motion.div
             key={badge.id}
+            variants={motionUi.staggerItem}
+            whileHover={motionUi.hover}
+            whileTap={motionUi.tap}
             className={`interactive-surface rounded-card border p-4 shadow-card transition ${
               earned
                 ? 'border-accent/40 bg-accent-50'
@@ -43,9 +53,9 @@ export function Badges() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         )
       })}
-    </div>
+    </motion.div>
   )
 }

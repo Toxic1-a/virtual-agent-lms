@@ -358,6 +358,16 @@
       animation: overlay-pulse 3s ease-in-out infinite alternate;
     }
 
+    html.ui-alive .hero-gradient-live,
+    html[data-agent-mode='animated'] .hero-gradient-live {
+      background-image:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(37, 99, 235, 0.35), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 90% 80%, rgba(20, 184, 166, 0.3), transparent 50%),
+        linear-gradient(120deg, rgba(15, 23, 42, 0.15), transparent 45%, rgba(37, 99, 235, 0.2));
+      background-size: 200% 200%;
+      animation: hero-gradient-shift 14s ease-in-out infinite;
+    }
+
     html.ui-alive .mode-chip-live,
     html[data-agent-mode='animated'] .mode-chip-live {
       animation: chip-glow-pulse 1.4s ease-in-out infinite;
@@ -803,6 +813,19 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Hero: subtle CSS gradient drift (animated mode only; no layout props) */
+@keyframes hero-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

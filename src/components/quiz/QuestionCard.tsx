@@ -50,14 +50,16 @@ export function QuestionCard({
 
       <fieldset className="space-y-2">
         <legend className="sr-only">{question.prompt}</legend>
-        <div
+        <motion.div
           className={
             question.options.some((o) => isAssetPath(o.text))
               ? 'grid gap-3 sm:grid-cols-2'
               : 'space-y-2'
           }
+          variants={motionUi.staggerContainer}
+          {...motionUi.staggerProps}
         >
-          {question.options.map((option, optionIndex) => {
+          {question.options.map((option) => {
             const selected = selectedId === option.id
             const isImageOption = isAssetPath(option.text)
             let stateClass = 'border-secondary-100 bg-white hover:border-primary/30'
@@ -68,7 +70,7 @@ export function QuestionCard({
             return (
               <motion.label
                 key={option.id}
-                {...motionUi.item(optionIndex)}
+                variants={motionUi.staggerItem}
                 whileHover={motionUi.animated && !revealed ? motionUi.optionHover : undefined}
                 whileTap={motionUi.animated && !revealed ? motionUi.tap : undefined}
                 className={`interactive-surface flex cursor-pointer items-start gap-3 rounded-card border p-4 transition ${stateClass}`}
@@ -94,7 +96,7 @@ export function QuestionCard({
               </motion.label>
             )
           })}
-        </div>
+        </motion.div>
       </fieldset>
       {revealed && question.explanation ? (
         <p className="rounded-xl bg-secondary-50 px-3 py-2 text-sm text-secondary-700" role="status">

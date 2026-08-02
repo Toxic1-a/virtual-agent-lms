@@ -8,10 +8,9 @@ import { useUiMotion } from '../../motion/useUiMotion'
 
 interface ModuleCardProps {
   module: Module
-  index: number
 }
 
-export function ModuleCard({ module, index }: ModuleCardProps) {
+export function ModuleCard({ module }: ModuleCardProps) {
   const lessons = useLessonsByModule(module.id)
   const { isLessonComplete, isModuleComplete } = useProgress()
   const { showCue, clearCue } = useAgentCue()
@@ -26,7 +25,7 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
 
   return (
     <motion.article
-      {...motionUi.item(index)}
+      variants={motionUi.staggerItem}
       whileHover={motionUi.hover}
       whileTap={motionUi.tap}
       className="card flex h-full flex-col p-5"
@@ -66,13 +65,15 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
         </div>
       </div>
 
-      <Link
-        to={`/modules/${module.id}`}
-        className="btn-primary mt-5 w-full"
-        aria-label={`بدء الوحدة: ${module.title}`}
-      >
-        {complete ? 'مراجعة الوحدة' : done > 0 ? 'متابعة' : 'ابدأ'}
-      </Link>
+      <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap} className="mt-5">
+        <Link
+          to={`/modules/${module.id}`}
+          className="btn-primary w-full"
+          aria-label={`بدء الوحدة: ${module.title}`}
+        >
+          {complete ? 'مراجعة الوحدة' : done > 0 ? 'متابعة' : 'ابدأ'}
+        </Link>
+      </motion.div>
     </motion.article>
   )
 }

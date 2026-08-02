@@ -36,6 +36,7 @@ export function Dashboard() {
             <motion.div
               {...motionUi.item(3)}
               whileHover={motionUi.hover}
+              whileTap={motionUi.tap}
               className="card flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="space-y-2">
@@ -51,9 +52,11 @@ export function Dashboard() {
                   </p>
                 ) : null}
               </div>
-              <Link to="/quizzes/achievement-test" className="btn-primary shrink-0 text-center">
-                {achievementResult ? 'مراجعة الاختبار' : 'بدء الاختبار التحصيلي'}
-              </Link>
+              <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap}>
+                <Link to="/quizzes/achievement-test" className="btn-primary shrink-0 text-center">
+                  {achievementResult ? 'مراجعة الاختبار' : 'بدء الاختبار التحصيلي'}
+                </Link>
+              </motion.div>
             </motion.div>
           </section>
         ) : null}
@@ -62,11 +65,15 @@ export function Dashboard() {
           <h2 id="modules-title" className="section-title">
             الوحدات التعليمية
           </h2>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {modules.map((module, index) => (
-              <ModuleCard key={module.id} module={module} index={index} />
+          <motion.div
+            className="grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+            variants={motionUi.staggerContainer}
+            {...motionUi.staggerProps}
+          >
+            {modules.map((module) => (
+              <ModuleCard key={module.id} module={module} />
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <section aria-labelledby="badges-title" className="space-y-4">

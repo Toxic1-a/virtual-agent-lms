@@ -16,12 +16,17 @@ export function AuthorsPage() {
           <p className="text-secondary-600">أسماء القائمين على إعداد هذه البيئة التعليمية</p>
         </header>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {authors.map((author, index) => (
+        <motion.div
+          className="grid gap-5 md:grid-cols-2"
+          variants={motionUi.staggerContainer}
+          {...motionUi.staggerProps}
+        >
+          {authors.map((author) => (
             <motion.article
               key={author.id}
-              {...motionUi.item(index)}
+              variants={motionUi.staggerItem}
               whileHover={motionUi.hover}
+              whileTap={motionUi.tap}
               className="card flex h-full flex-col p-6"
             >
               <div className="flex items-start gap-4">
@@ -40,24 +45,28 @@ export function AuthorsPage() {
 
               <div className="mt-6 border-t border-secondary-100 pt-4">
                 <p className="mb-3 text-sm font-semibold text-secondary-800">للتواصل</p>
-                <a
-                  href={author.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full sm:w-auto"
-                  aria-label={`صفحة فيسبوك ${author.name}`}
-                >
-                  صفحة فيسبوك
-                </a>
+                <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap} className="inline-flex">
+                  <a
+                    href={author.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary w-full sm:w-auto"
+                    aria-label={`صفحة فيسبوك ${author.name}`}
+                  >
+                    صفحة فيسبوك
+                  </a>
+                </motion.div>
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         <div className="text-center">
-          <Link to="/" className="btn-secondary inline-flex">
-            العودة للرئيسية
-          </Link>
+          <motion.div whileHover={motionUi.hover} whileTap={motionUi.tap} className="inline-flex">
+            <Link to="/" className="btn-secondary inline-flex">
+              العودة للرئيسية
+            </Link>
+          </motion.div>
         </div>
       </div>
     </PageShell>
