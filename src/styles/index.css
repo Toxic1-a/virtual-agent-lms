@@ -26,59 +26,6 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /*
-   * PROOF styles — ALWAYS apply in animated mode (NOT gated by prefers-reduced-motion).
-   * So the user can confirm ب متحرك works even if OS reduce-motion is on.
-   */
-  html.ui-alive .animated-mode-banner,
-  html[data-agent-mode='animated'] .animated-mode-banner {
-    display: block;
-    position: relative;
-    z-index: 60;
-    width: 100%;
-    padding: 0.85rem 1rem;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    color: #052e16;
-    background: linear-gradient(90deg, #22c55e, #4ade80, #86efac, #4ade80, #22c55e);
-    background-size: 200% 100%;
-    border-bottom: 4px solid #166534;
-    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
-  }
-
-  @media (max-width: 768px) {
-    html.ui-alive .animated-mode-banner,
-    html[data-agent-mode='animated'] .animated-mode-banner {
-      padding: 0.45rem 0.75rem;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      border-bottom-width: 2px;
-      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
-    }
-
-    html.ui-alive body,
-    html[data-agent-mode='animated'] body {
-      outline-width: 3px;
-      outline-offset: -3px;
-    }
-  }
-
-  html:not(.ui-alive) .animated-mode-banner,
-  html[data-agent-mode='static'] .animated-mode-banner {
-    display: none !important;
-  }
-
-  .animated-mode-banner__warn {
-    display: inline;
-    font-weight: 700;
-    color: #7f1d1d;
-    background: #fef08a;
-    padding: 0.15rem 0.45rem;
-    border-radius: 0.35rem;
-  }
-
   /* Extreme card hover — always on in animated mode */
   html.ui-alive .card,
   html.ui-alive .interactive-surface,
@@ -152,12 +99,6 @@
         0 14px 28px rgba(15, 23, 42, 0.16) !important;
       filter: none !important;
     }
-  }
-
-  html.ui-alive body,
-  html[data-agent-mode='animated'] body {
-    outline: 6px solid #22c55e;
-    outline-offset: -6px;
   }
 
   @media (prefers-reduced-motion: no-preference) {

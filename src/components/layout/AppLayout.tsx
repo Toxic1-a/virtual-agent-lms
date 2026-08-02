@@ -5,7 +5,6 @@ import { useLiteMotion } from '../../hooks/useLiteMotion'
 import { AgentController } from '../virtual-agent/AgentController'
 import { PageTransition } from '../motion/PageTransition'
 import { AmbientMotion } from './AmbientMotion'
-import { AnimatedModeBanner } from './AnimatedModeBanner'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
@@ -22,7 +21,6 @@ export function AppLayout() {
   return (
     <div className="relative flex min-h-screen flex-col">
       <AmbientMotion />
-      <AnimatedModeBanner />
       <Header />
       <main className="relative z-10 flex-1">
         <div
