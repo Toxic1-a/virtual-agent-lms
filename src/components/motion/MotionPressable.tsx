@@ -8,7 +8,7 @@ type MotionPressableProps = HTMLMotionProps<'div'> & {
 }
 
 /**
- * Clickable surface: whileHover scale 1.03, whileTap 0.97 (~0.15s).
+ * Boxed / pressable surface: translateY + scale on hover, tap scale-down.
  * Frozen in static mode / prefers-reduced-motion (via useUiMotion).
  */
 export function MotionPressable({ children, className, ...rest }: MotionPressableProps) {
@@ -19,7 +19,7 @@ export function MotionPressable({ children, className, ...rest }: MotionPressabl
       className={className}
       whileHover={motionUi.hover}
       whileTap={motionUi.tap}
-      transition={{ duration: 0.15, ease: 'easeOut' }}
+      transition={{ duration: 0.22, ease: 'easeOut' }}
       {...rest}
     >
       {children}

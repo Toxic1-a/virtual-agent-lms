@@ -9,6 +9,7 @@ import {
 
 const easeOut = [0.16, 1, 0.3, 1] as const
 const pressTransition = { duration: 0.15, ease: 'easeOut' } as const
+const hoverTransition = { duration: 0.22, ease: 'easeOut' } as const
 
 /** Shared UI motion: dramatic when animated mode, frozen when static / reduced-motion. */
 export function useUiMotion() {
@@ -108,10 +109,14 @@ export function useUiMotion() {
     float,
     pulse,
     navBounce,
-    /** Global press feedback: transform/opacity only, ~0.15s */
-    hover: on ? { scale: 1.03, transition: pressTransition } : undefined,
-    optionHover: on ? { scale: 1.03, x: -2, transition: pressTransition } : undefined,
-    btnHover: on ? { scale: 1.03, transition: pressTransition } : undefined,
+    /** Global card/surface hover: translateY + scale only (animated mode). */
+    hover: on
+      ? { y: -14, scale: 1.06, transition: hoverTransition }
+      : undefined,
+    optionHover: on
+      ? { y: -8, scale: 1.04, x: -2, transition: hoverTransition }
+      : undefined,
+    btnHover: on ? { y: -6, scale: 1.05, transition: hoverTransition } : undefined,
     tap: on ? { scale: 0.97, transition: pressTransition } : undefined,
     staggerContainer: on ? staggerContainer : staggerContainerStatic,
     staggerItem: on ? staggerItem : staggerItemStatic,

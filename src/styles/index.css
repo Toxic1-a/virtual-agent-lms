@@ -87,54 +87,64 @@
       animation-duration: 2.4s;
     }
 
-    /* Cards / content boxes: dynamic hover (lift + tilt + scale) */
+    /* Cards / boxed surfaces: strong hover (translateY + scale + shadow only) */
     html.ui-alive .card:hover,
     html.ui-alive .interactive-surface:hover,
+    html.ui-alive .interactive-surface:focus-within,
     html.ui-alive main article.card:hover,
     html.ui-alive main section.card:hover,
     html.ui-alive a.card:hover,
+    html.ui-alive main .rounded-card.border:hover,
+    html.ui-alive main .shadow-card:hover,
+    html.ui-alive main .rounded-card.shadow-card:hover,
     html[data-agent-mode='animated'] .card:hover,
     html[data-agent-mode='animated'] .interactive-surface:hover,
+    html[data-agent-mode='animated'] .interactive-surface:focus-within,
     html[data-agent-mode='animated'] main article.card:hover,
     html[data-agent-mode='animated'] main section.card:hover,
-    html[data-agent-mode='animated'] a.card:hover {
-      transform: translateY(-14px) scale(1.045) rotate(-1.35deg);
-      box-shadow: 0 28px 56px rgba(15, 23, 42, 0.22);
+    html[data-agent-mode='animated'] a.card:hover,
+    html[data-agent-mode='animated'] main .rounded-card.border:hover,
+    html[data-agent-mode='animated'] main .shadow-card:hover,
+    html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
+      transform: translateY(-16px) scale(1.06);
+      box-shadow: 0 32px 64px rgba(15, 23, 42, 0.26);
       animation-play-state: paused;
+      z-index: 2;
     }
 
     html.ui-alive .card:nth-child(2n):hover,
     html[data-agent-mode='animated'] .card:nth-child(2n):hover {
-      transform: translateY(-14px) scale(1.045) rotate(1.35deg);
+      transform: translateY(-16px) scale(1.06);
     }
 
     html.ui-alive .card:nth-child(3n):hover,
     html[data-agent-mode='animated'] .card:nth-child(3n):hover {
-      transform: translateY(-16px) scale(1.05) rotate(-0.8deg);
+      transform: translateY(-18px) scale(1.07);
     }
 
     /* Quiz options / labels / boxed links */
     html.ui-alive fieldset label,
     html.ui-alive .interactive-surface,
+    html.ui-alive main .rounded-card.border,
+    html.ui-alive main .shadow-card,
     html[data-agent-mode='animated'] fieldset label,
-    html[data-agent-mode='animated'] .interactive-surface {
+    html[data-agent-mode='animated'] .interactive-surface,
+    html[data-agent-mode='animated'] main .rounded-card.border,
+    html[data-agent-mode='animated'] main .shadow-card {
       transition:
-        transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 260ms ease,
-        border-radius 260ms ease,
+        transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 280ms ease,
         border-color 220ms ease,
         background-color 220ms ease;
-      will-change: transform;
+      will-change: transform, box-shadow;
     }
 
     html.ui-alive fieldset label:hover,
     html.ui-alive fieldset label:focus-within,
-    html.ui-alive .interactive-surface:focus-within,
     html[data-agent-mode='animated'] fieldset label:hover,
-    html[data-agent-mode='animated'] fieldset label:focus-within,
-    html[data-agent-mode='animated'] .interactive-surface:focus-within {
-      transform: translateY(-8px) translateX(-3px) scale(1.03) rotate(-0.7deg);
-      box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+    html[data-agent-mode='animated'] fieldset label:focus-within {
+      transform: translateY(-12px) scale(1.04);
+      box-shadow: 0 22px 48px rgba(37, 99, 235, 0.22);
       animation-play-state: paused;
     }
 
@@ -142,7 +152,7 @@
     html.ui-alive fieldset label:nth-child(2n):focus-within,
     html[data-agent-mode='animated'] fieldset label:nth-child(2n):hover,
     html[data-agent-mode='animated'] fieldset label:nth-child(2n):focus-within {
-      transform: translateY(-8px) translateX(3px) scale(1.03) rotate(0.7deg);
+      transform: translateY(-12px) scale(1.04);
     }
 
     /* Buttons: shape morph + stronger lift on hover */
@@ -223,18 +233,6 @@
     html.ui-alive .btn-accent:hover,
     html[data-agent-mode='animated'] .btn-accent:hover {
       box-shadow: 0 16px 36px rgba(20, 184, 166, 0.42);
-    }
-
-    /* Boxed content surfaces (stats, badges, lesson bits) */
-    html.ui-alive main .rounded-card.border:hover,
-    html.ui-alive main .shadow-card:hover,
-    html[data-agent-mode='animated'] main .rounded-card.border:hover,
-    html[data-agent-mode='animated'] main .shadow-card:hover {
-      transform: translateY(-10px) scale(1.03) rotate(-0.9deg);
-      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.16);
-      transition:
-        transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 260ms ease;
     }
 
     html.ui-alive .cta-float,
