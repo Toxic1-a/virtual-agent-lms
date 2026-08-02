@@ -16,7 +16,7 @@ export function useAnimatedAgentLifecycle(context: string) {
   const mode = useAgentMode()
   const reduced = useReducedMotion()
   const location = useLocation()
-  const { react, flashMood, bumpInteraction, interactionEpoch, speechMuted } = useAgentCue()
+  const { react, flashMood, bumpInteraction, interactionEpoch } = useAgentCue()
 
   const greetedRef = useRef(false)
   const lastNavAt = useRef(0)
@@ -26,12 +26,12 @@ export function useAnimatedAgentLifecycle(context: string) {
 
   // First mount greeting
   useEffect(() => {
-    if (mode !== 'animated' || reduced || speechMuted) return
+    if (mode !== 'animated' || reduced) return
     if (greetedRef.current) return
     greetedRef.current = true
     const t = window.setTimeout(() => react('greeting'), 450)
     return () => window.clearTimeout(t)
-  }, [mode, reduced, react, speechMuted])
+  }, [mode, reduced, react])
 
   // Navigation / context change
   useEffect(() => {
@@ -53,11 +53,6 @@ export function useAnimatedAgentLifecycle(context: string) {
     lastNavAt.current = now
     bumpInteraction()
 
-    if (speechMuted) {
-      flashMood(context.startsWith('quiz') ? 'think' : 'pointing', 900)
-      return
-    }
-
     if (context === 'quiz' || context.startsWith('quiz')) {
       react('quiz-start')
     } else if (context === 'completion') {
@@ -65,16 +60,7 @@ export function useAnimatedAgentLifecycle(context: string) {
     } else {
       react('navigate')
     }
-  }, [
-    bumpInteraction,
-    context,
-    flashMood,
-    location.pathname,
-    mode,
-    react,
-    reduced,
-    speechMuted,
-  ])
+  }, [bumpInteraction, context, location.pathname, mode, react, reduced])
 
   // Global button / interactive micro-reaction
   useEffect(() => {
@@ -83,7 +69,6 @@ export function useAnimatedAgentLifecycle(context: string) {
     const onPointerDown = (event: PointerEvent) => {
       const target = event.target as HTMLElement | null
       if (!target) return
-      if (target.closest('[data-agent-controls]')) return
       const interactive = target.closest(
         'button, a.btn, a.btn-primary, a.btn-secondary, a.btn-accent, [role="button"], label.interactive-surface, .interactive-surface',
       )
@@ -105,12 +90,12 @@ export function useAnimatedAgentLifecycle(context: string) {
 
   // Idle timeout alternate cue
   useEffect(() => {
-    if (mode !== 'animated' || reduced || speechMuted) return
+    if (mode !== 'animated' || reduced) return
 
     const timer = window.setTimeout(() => {
       react('idle')
     }, IDLE_MS)
 
     return () => window.clearTimeout(timer)
-  }, [interactionEpoch, mode, react, reduced, speechMuted])
+  }, [interactionEpoch, mode, react, reduced])
 }

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useAgentCue } from '../../context/AgentCueContext'
 import { useAgentScript } from '../../hooks/useCourseData'
-import { useAgentMode } from '../../hooks/useAgentMode'
 import { AgentBubble } from './AgentBubble'
 
 const FALLBACK_MESSAGES = ['أنا هنا لمساعدتك أثناء التعلم.']
@@ -21,9 +20,8 @@ function visibleDuration(message: string) {
 }
 
 export function AgentSpeech({ context, onSpeakingChange }: AgentSpeechProps) {
-  const mode = useAgentMode()
   const script = useAgentScript(context)
-  const { cueMessage, speechMuted } = useAgentCue()
+  const { cueMessage } = useAgentCue()
   const messages = useMemo(
     () => script?.messages ?? FALLBACK_MESSAGES,
     [script?.messages],
@@ -35,14 +33,8 @@ export function AgentSpeech({ context, onSpeakingChange }: AgentSpeechProps) {
   }, [context])
 
   const activeMessage = cueMessage ?? messages[index] ?? FALLBACK_MESSAGES[0]
-  const muted = mode === 'animated' && speechMuted
 
   useEffect(() => {
-    if (muted) {
-      onSpeakingChange?.(false)
-      return
-    }
-
     const duration = visibleDuration(activeMessage)
     const speakingFor = Math.max(4200, duration - HOLD_AFTER_SPEAK_MS)
 
@@ -61,12 +53,7 @@ export function AgentSpeech({ context, onSpeakingChange }: AgentSpeechProps) {
       window.clearTimeout(speakTimer)
       if (nextTimer) window.clearTimeout(nextTimer)
     }
-  }, [activeMessage, cueMessage, messages.length, muted, onSpeakingChange])
+  }, [activeMessage, cueMessage, messages.length, onSpeakingChange])
 
-  return (
-    <AgentBubble
-      message={activeMessage}
-      muted={muted}
-    />
-  )
+  return <AgentBubble message={activeMessage} />
 }
