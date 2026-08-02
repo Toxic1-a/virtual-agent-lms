@@ -9,6 +9,7 @@ import {
 import type { AgentCharacterConfig, AgentMood } from './agentCharacters'
 import { moodLabelAr, moodToRiveExpression } from '../../lib/agentReactions'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+import { useLiteMotion } from '../../hooks/useLiteMotion'
 
 interface RiveAgentProps {
   character: AgentCharacterConfig
@@ -99,6 +100,7 @@ export function RiveAgent({
   pointerEngaged = false,
 }: RiveAgentProps) {
   const reduced = useReducedMotion()
+  const lite = useLiteMotion()
   const activeMood = resolveActiveMood(mood, speaking, pointerEngaged)
   const expression = moodToRiveExpression(activeMood)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -155,7 +157,7 @@ export function RiveAgent({
 
   // Calm idle micro-expression: occasional blush flicker (stand-in for blink — no blink input)
   useEffect(() => {
-    if (!blushInput || reduced || speaking) return
+    if (!blushInput || reduced || lite || speaking) return
     if (activeMood !== 'idle') return
 
     const schedule = () => {
@@ -179,9 +181,9 @@ export function RiveAgent({
       window.clearTimeout(timer)
       window.clearInterval(loop)
     }
-  }, [blushInput, reduced, speaking, activeMood])
+  }, [blushInput, reduced, lite, speaking, activeMood])
 
-  // Keep the face awake and follow the mouse anywhere on the page.
+  // Keep the face awake; follow the mouse on desktop only (skip continuous pointer on mobile).
   useEffect(() => {
     if (!rive || !character.useStateMachine) return
 
@@ -204,6 +206,12 @@ export function RiveAgent({
     activate()
     const bootTimer = window.setTimeout(activate, 150)
 
+    if (lite) {
+      return () => {
+        window.clearTimeout(bootTimer)
+      }
+    }
+
     const onMove = (event: PointerEvent) => {
       dispatchCanvasPointer(canvas, event.clientX, event.clientY)
     }
@@ -213,7 +221,7 @@ export function RiveAgent({
       window.clearTimeout(bootTimer)
       window.removeEventListener('pointermove', onMove)
     }
-  }, [rive, character.useStateMachine, stateMachineName])
+  }, [rive, character.useStateMachine, stateMachineName, lite])
 
   useEffect(() => {
     if (!rive) return

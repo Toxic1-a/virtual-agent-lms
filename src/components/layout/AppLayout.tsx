@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useAgentHost } from '../../context/AgentHostContext'
 import { useUiMotion } from '../../motion/useUiMotion'
+import { useLiteMotion } from '../../hooks/useLiteMotion'
 import { AgentController } from '../virtual-agent/AgentController'
 import { PageTransition } from '../motion/PageTransition'
 import { AmbientMotion } from './AmbientMotion'
@@ -15,6 +16,7 @@ import { Header } from './Header'
 export function AppLayout() {
   const { config } = useAgentHost()
   const motionUi = useUiMotion()
+  const lite = useLiteMotion()
   const { showAgent, wide, context, mood } = config
 
   return (
@@ -43,7 +45,7 @@ export function AppLayout() {
             }`}
             aria-hidden={!showAgent}
           >
-            {motionUi.animated ? (
+            {motionUi.animated && !lite ? (
               <motion.div
                 animate={{
                   y: [0, -8, 0],
@@ -55,7 +57,9 @@ export function AppLayout() {
                 <AgentController context={context} mood={mood} />
               </motion.div>
             ) : (
-              <AgentController context={context} mood={mood} />
+              <div className={motionUi.animated ? 'agent-panel-live' : undefined}>
+                <AgentController context={context} mood={mood} />
+              </div>
             )}
           </aside>
         </div>

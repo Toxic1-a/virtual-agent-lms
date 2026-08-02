@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { useUiMotion } from '../../motion/useUiMotion'
+import { useLiteMotion } from '../../hooks/useLiteMotion'
 
 const PARTICLES = Array.from({ length: 18 }, (_, i) => i)
 
-/** Bold floating orbs + particles — animated mode only. */
+/** Bold floating orbs + particles — animated mode only; hidden on mobile. */
 export function AmbientMotion() {
   const { animated } = useUiMotion()
-  if (!animated) return null
+  const lite = useLiteMotion()
+  if (!animated || lite) return null
 
   return (
     <div

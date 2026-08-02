@@ -1,4 +1,5 @@
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { useLiteMotion } from '../hooks/useLiteMotion'
 import { useAgentMode } from '../hooks/useAgentMode'
 import {
   staggerContainer,
@@ -15,16 +16,25 @@ const hoverTransition = { duration: 0.22, ease: 'easeOut' } as const
 export function useUiMotion() {
   const mode = useAgentMode()
   const reduced = useReducedMotion()
+  const lite = useLiteMotion()
   const animated = mode === 'animated'
   const on = animated && !reduced
+  /** Full desktop loops; mobile keeps animated mode but without infinite bobbing/blur. */
+  const lively = on && !lite
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const page: any = on
-    ? {
-        initial: { opacity: 0, y: 56, scale: 0.94, filter: 'blur(10px)' },
-        animate: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
-        transition: { duration: 0.7, ease: easeOut },
-      }
+    ? lite
+      ? {
+          initial: { opacity: 0, y: 24 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.35, ease: easeOut },
+        }
+      : {
+          initial: { opacity: 0, y: 56, scale: 0.94, filter: 'blur(10px)' },
+          animate: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
+          transition: { duration: 0.7, ease: easeOut },
+        }
     : {
         initial: false,
         animate: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' },
@@ -33,7 +43,7 @@ export function useUiMotion() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const item = (index = 0): any =>
-    on
+    lively
       ? {
           initial: {
             opacity: 0,
@@ -64,14 +74,24 @@ export function useUiMotion() {
             },
           },
         }
-      : {
-          initial: false,
-          animate: { opacity: 1, y: 0, scale: 1, rotate: 0 },
-          transition: { duration: 0 },
-        }
+      : on
+        ? {
+            initial: { opacity: 0, y: 16 },
+            animate: { opacity: 1, y: 0, scale: 1, rotate: 0 },
+            transition: {
+              delay: 0.03 + index * 0.04,
+              duration: 0.28,
+              ease: easeOut,
+            },
+          }
+        : {
+            initial: false,
+            animate: { opacity: 1, y: 0, scale: 1, rotate: 0 },
+            transition: { duration: 0 },
+          }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const float: any = on
+  const float: any = lively
     ? {
         animate: { y: [0, -20, 0], rotate: [0, 1.8, 0, -1.8, 0] },
         transition: { duration: 2.2, repeat: Infinity, ease: 'easeInOut' },
@@ -79,7 +99,7 @@ export function useUiMotion() {
     : {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const pulse: any = on
+  const pulse: any = lively
     ? {
         animate: { scale: [1, 1.12, 1] },
         transition: { duration: 1.25, repeat: Infinity, ease: 'easeInOut' },
@@ -88,7 +108,7 @@ export function useUiMotion() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const navBounce = (index = 0): any =>
-    on
+    lively
       ? {
           animate: { y: [0, -8, 0] },
           transition: {
@@ -104,6 +124,7 @@ export function useUiMotion() {
     mode,
     animated: on,
     reduced,
+    lite,
     page,
     item,
     float,
@@ -111,12 +132,20 @@ export function useUiMotion() {
     navBounce,
     /** Global card/surface hover: translateY + scale only (animated mode). */
     hover: on
-      ? { y: -14, scale: 1.06, transition: hoverTransition }
+      ? lite
+        ? { y: -6, scale: 1.02, transition: hoverTransition }
+        : { y: -14, scale: 1.06, transition: hoverTransition }
       : undefined,
     optionHover: on
-      ? { y: -8, scale: 1.04, x: -2, transition: hoverTransition }
+      ? lite
+        ? { y: -4, scale: 1.02, transition: hoverTransition }
+        : { y: -8, scale: 1.04, x: -2, transition: hoverTransition }
       : undefined,
-    btnHover: on ? { y: -6, scale: 1.05, transition: hoverTransition } : undefined,
+    btnHover: on
+      ? lite
+        ? { y: -2, scale: 1.02, transition: hoverTransition }
+        : { y: -6, scale: 1.05, transition: hoverTransition }
+      : undefined,
     tap: on ? { scale: 0.97, transition: pressTransition } : undefined,
     staggerContainer: on ? staggerContainer : staggerContainerStatic,
     staggerItem: on ? staggerItem : staggerItemStatic,

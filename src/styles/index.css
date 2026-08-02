@@ -48,6 +48,23 @@
     box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
   }
 
+  @media (max-width: 768px) {
+    html.ui-alive .animated-mode-banner,
+    html[data-agent-mode='animated'] .animated-mode-banner {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      border-bottom-width: 2px;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    }
+
+    html.ui-alive body,
+    html[data-agent-mode='animated'] body {
+      outline-width: 3px;
+      outline-offset: -3px;
+    }
+  }
+
   html:not(.ui-alive) .animated-mode-banner,
   html[data-agent-mode='static'] .animated-mode-banner {
     display: none !important;
@@ -106,6 +123,35 @@
       0 32px 64px rgba(15, 23, 42, 0.28) !important;
     z-index: 2;
     animation-play-state: paused;
+  }
+
+  @media (max-width: 768px), (pointer: coarse) {
+    html.ui-alive .card:hover,
+    html.ui-alive .interactive-surface:hover,
+    html.ui-alive .interactive-surface:focus-within,
+    html.ui-alive main article.card:hover,
+    html.ui-alive main section.card:hover,
+    html.ui-alive a.card:hover,
+    html.ui-alive main .rounded-card.border:hover,
+    html.ui-alive main .shadow-card:hover,
+    html.ui-alive main .rounded-card.shadow-card:hover,
+    html[data-agent-mode='animated'] .card:hover,
+    html[data-agent-mode='animated'] .interactive-surface:hover,
+    html[data-agent-mode='animated'] .interactive-surface:focus-within,
+    html[data-agent-mode='animated'] main article.card:hover,
+    html[data-agent-mode='animated'] main section.card:hover,
+    html[data-agent-mode='animated'] a.card:hover,
+    html[data-agent-mode='animated'] main .rounded-card.border:hover,
+    html[data-agent-mode='animated'] main .shadow-card:hover,
+    html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
+      transform: translateY(-6px) scale(1.02) !important;
+      outline: 2px solid #4ade80;
+      outline-offset: 1px;
+      box-shadow:
+        0 0 0 2px rgba(34, 197, 94, 0.28),
+        0 14px 28px rgba(15, 23, 42, 0.16) !important;
+      filter: none !important;
+    }
   }
 
   html.ui-alive body,
@@ -576,6 +622,136 @@
     html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(n + 6) {
       animation-delay: 0.9s;
     }
+
+    /*
+     * Mobile / narrow: kill continuous infinite loops.
+     * Keep short enter transitions + light hover/tap (transform/opacity only).
+     */
+    @media (max-width: 768px), (pointer: coarse) {
+      html.ui-alive body,
+      html[data-agent-mode='animated'] body {
+        background-attachment: scroll;
+        animation: none;
+      }
+
+      html.ui-alive .page-alive,
+      html.ui-alive .card,
+      html.ui-alive .cta-float,
+      html.ui-alive .btn-primary,
+      html.ui-alive .btn-secondary,
+      html.ui-alive .btn-accent,
+      html.ui-alive header,
+      html.ui-alive .nav-link-live,
+      html.ui-alive .progress-bar-fill,
+      html.ui-alive .logo-mark,
+      html.ui-alive .hero-visual,
+      html.ui-alive .hero-overlay-live,
+      html.ui-alive .hero-gradient-live,
+      html.ui-alive .mode-chip-live,
+      html.ui-alive .mode-live-badge,
+      html.ui-alive .agent-panel-live .card,
+      html.ui-alive .list-wave > *,
+      html.ui-alive ul.space-y-2 > li,
+      html.ui-alive ul.space-y-3 > li,
+      html.ui-alive fieldset.space-y-2 > *,
+      html.ui-alive .space-y-3 > .rounded-card,
+      html[data-agent-mode='animated'] .page-alive,
+      html[data-agent-mode='animated'] .card,
+      html[data-agent-mode='animated'] .cta-float,
+      html[data-agent-mode='animated'] .btn-primary,
+      html[data-agent-mode='animated'] .btn-secondary,
+      html[data-agent-mode='animated'] .btn-accent,
+      html[data-agent-mode='animated'] header,
+      html[data-agent-mode='animated'] .nav-link-live,
+      html[data-agent-mode='animated'] .progress-bar-fill,
+      html[data-agent-mode='animated'] .logo-mark,
+      html[data-agent-mode='animated'] .hero-visual,
+      html[data-agent-mode='animated'] .hero-overlay-live,
+      html[data-agent-mode='animated'] .hero-gradient-live,
+      html[data-agent-mode='animated'] .mode-chip-live,
+      html[data-agent-mode='animated'] .mode-live-badge,
+      html[data-agent-mode='animated'] .agent-panel-live .card,
+      html[data-agent-mode='animated'] .list-wave > *,
+      html[data-agent-mode='animated'] ul.space-y-2 > li,
+      html[data-agent-mode='animated'] ul.space-y-3 > li,
+      html[data-agent-mode='animated'] fieldset.space-y-2 > *,
+      html[data-agent-mode='animated'] .space-y-3 > .rounded-card {
+        animation: none !important;
+        will-change: auto !important;
+      }
+
+      /* One-shot enters still OK (title-in / soft-fade / footer-fade) — leave alone */
+
+      html.ui-alive .card,
+      html.ui-alive fieldset label,
+      html.ui-alive .interactive-surface,
+      html.ui-alive main .rounded-card.border,
+      html.ui-alive main .shadow-card,
+      html.ui-alive .btn,
+      html.ui-alive .btn-primary,
+      html.ui-alive .btn-secondary,
+      html.ui-alive .btn-accent,
+      html[data-agent-mode='animated'] .card,
+      html[data-agent-mode='animated'] fieldset label,
+      html[data-agent-mode='animated'] .interactive-surface,
+      html[data-agent-mode='animated'] main .rounded-card.border,
+      html[data-agent-mode='animated'] main .shadow-card,
+      html[data-agent-mode='animated'] .btn,
+      html[data-agent-mode='animated'] .btn-primary,
+      html[data-agent-mode='animated'] .btn-secondary,
+      html[data-agent-mode='animated'] .btn-accent {
+        will-change: auto !important;
+      }
+
+      /* Softer hover lift on touch — transform/opacity only, no filter */
+      html.ui-alive .card:hover,
+      html.ui-alive .interactive-surface:hover,
+      html.ui-alive .interactive-surface:focus-within,
+      html.ui-alive main article.card:hover,
+      html.ui-alive main section.card:hover,
+      html.ui-alive a.card:hover,
+      html.ui-alive main .rounded-card.border:hover,
+      html.ui-alive main .shadow-card:hover,
+      html.ui-alive main .rounded-card.shadow-card:hover,
+      html[data-agent-mode='animated'] .card:hover,
+      html[data-agent-mode='animated'] .interactive-surface:hover,
+      html[data-agent-mode='animated'] .interactive-surface:focus-within,
+      html[data-agent-mode='animated'] main article.card:hover,
+      html[data-agent-mode='animated'] main section.card:hover,
+      html[data-agent-mode='animated'] a.card:hover,
+      html[data-agent-mode='animated'] main .rounded-card.border:hover,
+      html[data-agent-mode='animated'] main .shadow-card:hover,
+      html[data-agent-mode='animated'] main .rounded-card.shadow-card:hover {
+        transform: translateY(-6px) scale(1.02) !important;
+        outline-width: 2px;
+        box-shadow:
+          0 0 0 2px rgba(34, 197, 94, 0.28),
+          0 14px 28px rgba(15, 23, 42, 0.16) !important;
+        filter: none !important;
+      }
+
+      html.ui-alive .btn:hover,
+      html.ui-alive .btn-primary:hover,
+      html.ui-alive .btn-secondary:hover,
+      html.ui-alive .btn-accent:hover,
+      html.ui-alive a.btn:hover,
+      html[data-agent-mode='animated'] .btn:hover,
+      html[data-agent-mode='animated'] .btn-primary:hover,
+      html[data-agent-mode='animated'] .btn-secondary:hover,
+      html[data-agent-mode='animated'] .btn-accent:hover,
+      html[data-agent-mode='animated'] a.btn:hover {
+        transform: translateY(-2px) scale(1.02) !important;
+        filter: none !important;
+        skew: none !important;
+      }
+
+      html.ui-alive fieldset label:hover,
+      html.ui-alive fieldset label:focus-within,
+      html[data-agent-mode='animated'] fieldset label:hover,
+      html[data-agent-mode='animated'] fieldset label:focus-within {
+        transform: translateY(-4px) scale(1.02) !important;
+      }
+    }
   }
 
   /* Static mode (أ ثابت): ZERO motion — no hover transforms / morphs */
@@ -897,6 +1073,13 @@
   .agent-talking-glow,
   .agent-celebrate-glow {
     animation: none !important;
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .agent-think-dot {
+    animation: none !important;
+    opacity: 0.85;
   }
 }
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { RiveAgent } from './RiveAgent'
 import { ANIMATED_AGENT_CHARACTER, type AgentMood } from './agentCharacters'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+import { useLiteMotion } from '../../hooks/useLiteMotion'
 import { moodLabelAr } from '../../lib/agentReactions'
 
 interface AnimatedAgentProps {
@@ -18,32 +19,34 @@ export function AnimatedAgent({
 }: AnimatedAgentProps) {
   const [pointerEngaged, setPointerEngaged] = useState(false)
   const reduced = useReducedMotion()
+  const lite = useLiteMotion()
   const celebrating = mood === 'celebrating' || mood === 'happy' || mood === 'greeting'
+  const calmShell = reduced || lite
 
   return (
     <div className="flex flex-col items-center gap-3">
       <motion.div
         className={`agent-avatar-shell relative w-full cursor-pointer overflow-hidden rounded-card border border-secondary-100 bg-gradient-to-b from-primary-50 to-white p-2 shadow-card transition-shadow hover:shadow-lg ${
           speaking ? 'agent-talking-glow' : ''
-        } ${celebrating && !reduced ? 'agent-celebrate-glow' : ''}`}
+        } ${celebrating && !calmShell ? 'agent-celebrate-glow' : ''}`}
         onPointerEnter={() => setPointerEngaged(true)}
         onPointerLeave={() => setPointerEngaged(false)}
         onFocus={() => setPointerEngaged(true)}
         onBlur={() => setPointerEngaged(false)}
         tabIndex={0}
         aria-label="وكيل افتراضي متحرك وتفاعلي"
-        initial={reduced ? false : { opacity: 0, scale: 0.92, y: 12 }}
+        initial={calmShell ? false : { opacity: 0, scale: 0.92, y: 12 }}
         animate={
-          reduced
+          calmShell
             ? { opacity: 1, scale: 1, y: 0 }
             : {
                 opacity: 1,
                 scale: speaking ? [1, 1.02, 1] : celebrating ? [1, 1.035, 1] : 1,
-                y: speaking || reduced ? 0 : [0, -4, 0],
+                y: speaking || calmShell ? 0 : [0, -4, 0],
               }
         }
         transition={
-          reduced
+          calmShell
             ? { duration: 0 }
             : speaking
               ? { scale: { duration: 1.1, repeat: Infinity, ease: 'easeInOut' }, y: { duration: 0 } }
