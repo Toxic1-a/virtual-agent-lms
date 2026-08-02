@@ -28,18 +28,25 @@ function readStoredMode(): AgentMode {
   }
 }
 
+function applyModeToDom(mode: AgentMode) {
+  const root = document.documentElement
+  root.dataset.agentMode = mode
+  root.classList.toggle('ui-alive', mode === 'animated')
+  document.body?.classList.toggle('ui-alive', mode === 'animated')
+}
+
 export function AgentModeProvider({ children }: { children: ReactNode }) {
   const [mode, setModeState] = useState<AgentMode>(() => {
     const initial = readStoredMode()
     if (typeof document !== 'undefined') {
-      document.documentElement.dataset.agentMode = initial
+      applyModeToDom(initial)
     }
     return initial
   })
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, mode)
-    document.documentElement.dataset.agentMode = mode
+    applyModeToDom(mode)
   }, [mode])
 
   const setMode = useCallback((next: AgentMode) => {

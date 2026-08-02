@@ -36,7 +36,28 @@ export function PageShell({
               : 'max-w-6xl lg:grid-cols-[minmax(0,1fr)_280px]'
           }`}
         >
-          <motion.div key={motionUi.mode} {...motionUi.page}>
+          <motion.div
+            key={motionUi.mode}
+            className={motionUi.animated ? 'page-alive' : undefined}
+            {...motionUi.page}
+            {...(motionUi.animated
+              ? {
+                  animate: {
+                    ...motionUi.page.animate,
+                    y: [0, -8, 0],
+                    rotate: [0, 0.2, 0, -0.2, 0],
+                  },
+                  transition: {
+                    ...motionUi.page.transition,
+                    y: { duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.7 },
+                    rotate: { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.7 },
+                    opacity: { duration: 0.65 },
+                    scale: { duration: 0.65 },
+                    filter: { duration: 0.65 },
+                  },
+                }
+              : {})}
+          >
             {children}
           </motion.div>
           {showAgent ? (
@@ -44,10 +65,11 @@ export function PageShell({
               {motionUi.animated ? (
                 <motion.div
                   animate={{
-                    y: [0, -10, 0],
-                    rotate: [0, 0.8, 0, -0.8, 0],
+                    y: [0, -18, 0],
+                    rotate: [0, 1.5, 0, -1.5, 0],
+                    scale: [1, 1.03, 1],
                   }}
-                  transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
                   className="agent-panel-live"
                 >
                   <AgentController context={agentContext} mood={agentMood} />

@@ -52,7 +52,7 @@ export function Home() {
           <motion.div {...motionUi.item(4)} className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/dashboard"
-              className="btn-primary"
+              className="btn-primary cta-float"
               onMouseEnter={() => startCue && showCue(startCue)}
               onMouseLeave={() => clearCue()}
               onFocus={() => startCue && showCue(startCue)}
@@ -62,7 +62,7 @@ export function Home() {
             </Link>
             <a
               href="#about-course"
-              className="btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
+              className="btn cta-float border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
               onMouseEnter={() => aboutCue && showCue(aboutCue)}
               onMouseLeave={() => clearCue()}
               onFocus={() => aboutCue && showCue(aboutCue)}
@@ -72,7 +72,7 @@ export function Home() {
             </a>
             <Link
               to="/authors"
-              className="btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
+              className="btn cta-float border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
               onMouseEnter={() => authorsCue && showCue(authorsCue)}
               onMouseLeave={() => clearCue()}
               onFocus={() => authorsCue && showCue(authorsCue)}
@@ -91,7 +91,7 @@ export function Home() {
         <div className="grid gap-4 md:grid-cols-2">
           <motion.article {...motionUi.item(1)} className="card p-5">
             <h3 className="font-bold text-secondary-900">أهداف المقرر</h3>
-            <ul className="mt-3 space-y-2">
+            <ul className="list-wave mt-3 space-y-2">
               {course.objectives.map((objective, index) => (
                 <motion.li
                   key={objective}

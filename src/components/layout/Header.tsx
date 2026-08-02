@@ -48,16 +48,7 @@ export function Header() {
 
         <nav aria-label="القائمة الرئيسية" className="hidden items-center gap-1 md:flex">
           {links.map((link, index) => (
-            <motion.div
-              key={link.to}
-              {...(motionUi.animated
-                ? {
-                    initial: { opacity: 0, y: -8 },
-                    animate: { opacity: 1, y: 0 },
-                    transition: { delay: 0.05 * index, duration: 0.35 },
-                  }
-                : {})}
-            >
+            <motion.div key={link.to} {...motionUi.navBounce(index)}>
               <NavLink
                 to={link.to}
                 end={link.end}
@@ -116,9 +107,17 @@ export function Header() {
               </svg>
             )}
           </button>
+          {mode === 'animated' ? (
+            <span
+              className="mode-live-badge hidden rounded-full bg-accent px-2.5 py-1 text-[11px] font-black text-white shadow-md sm:inline"
+              aria-hidden
+            >
+              متحرك
+            </span>
+          ) : null}
           <motion.div
             className={`mode-chip-live inline-flex items-center rounded-full border border-secondary-100 bg-secondary-50 p-1 ${
-              mode === 'animated' ? 'ring-2 ring-accent/30' : ''
+              mode === 'animated' ? 'ring-2 ring-accent/50 border-accent/40' : ''
             }`}
             role="group"
             aria-label="تبديل نسخة الوكيل الافتراضي"

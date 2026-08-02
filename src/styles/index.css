@@ -42,84 +42,159 @@
       transform: scale(0.975);
     }
 
-    /* ========== Animated mode: whole UI feels alive ========== */
+    /* ========== Animated mode (ui-alive): unmistakable motion ========== */
+    html.ui-alive body,
     html[data-agent-mode='animated'] body {
       background-image:
-        radial-gradient(ellipse 80% 50% at 100% -10%, rgba(37, 99, 235, 0.12), transparent),
-        radial-gradient(ellipse 60% 40% at -10% 100%, rgba(20, 184, 166, 0.12), transparent),
-        linear-gradient(120deg, rgba(37, 99, 235, 0.03), transparent 40%, rgba(20, 184, 166, 0.04));
-      background-size: 100% 100%, 100% 100%, 200% 200%;
+        radial-gradient(ellipse 90% 55% at 100% -10%, rgba(37, 99, 235, 0.22), transparent),
+        radial-gradient(ellipse 70% 45% at -10% 100%, rgba(20, 184, 166, 0.2), transparent),
+        linear-gradient(120deg, rgba(37, 99, 235, 0.06), transparent 40%, rgba(20, 184, 166, 0.08));
+      background-size: 100% 100%, 100% 100%, 240% 240%;
       background-attachment: fixed;
-      animation: bg-drift 22s ease-in-out infinite alternate;
+      animation: bg-drift 10s ease-in-out infinite alternate;
     }
 
+    html.ui-alive .page-alive,
+    html[data-agent-mode='animated'] .page-alive {
+      animation: page-sway 5.5s ease-in-out infinite;
+    }
+
+    html.ui-alive .card,
     html[data-agent-mode='animated'] .card {
       transition:
         transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 280ms ease,
         border-color 280ms ease;
-      animation: card-breathe 5.5s ease-in-out infinite;
+      animation: card-float 2.6s ease-in-out infinite;
+      will-change: transform, box-shadow;
     }
 
+    html.ui-alive .card:nth-child(2n),
     html[data-agent-mode='animated'] .card:nth-child(2n) {
-      animation-delay: 0.6s;
+      animation-delay: 0.35s;
+      animation-duration: 2.9s;
     }
 
+    html.ui-alive .card:nth-child(3n),
     html[data-agent-mode='animated'] .card:nth-child(3n) {
-      animation-delay: 1.2s;
+      animation-delay: 0.7s;
+      animation-duration: 3.2s;
     }
 
+    html.ui-alive .card:nth-child(4n),
+    html[data-agent-mode='animated'] .card:nth-child(4n) {
+      animation-delay: 1s;
+      animation-duration: 2.4s;
+    }
+
+    html.ui-alive .card:hover,
     html[data-agent-mode='animated'] .card:hover {
-      transform: translateY(-6px) scale(1.015);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
       animation-play-state: paused;
     }
 
+    html.ui-alive .btn-primary,
     html[data-agent-mode='animated'] .btn-primary {
       box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-      animation: pulse-glow 2.4s ease-in-out infinite;
       background-size: 200% 200%;
       background-image: linear-gradient(120deg, #2563eb, #1d4ed8, #0ea5e9, #2563eb);
       animation:
-        pulse-glow 2.4s ease-in-out infinite,
-        gradient-shift 4s ease infinite;
+        pulse-glow 1.5s ease-in-out infinite,
+        gradient-shift 2.8s ease infinite,
+        btn-bob 2s ease-in-out infinite;
     }
 
+    html.ui-alive .btn-primary:hover,
     html[data-agent-mode='animated'] .btn-primary:hover {
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-4px) scale(1.04);
     }
 
+    html.ui-alive .btn-secondary,
     html[data-agent-mode='animated'] .btn-secondary {
-      animation: secondary-nudge 4s ease-in-out infinite;
+      animation: secondary-nudge 2.2s ease-in-out infinite;
     }
 
+    html.ui-alive .btn-secondary:hover,
     html[data-agent-mode='animated'] .btn-secondary:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
+    html.ui-alive .btn-accent,
     html[data-agent-mode='animated'] .btn-accent {
-      animation: accent-pulse 2.8s ease-in-out infinite;
+      animation:
+        accent-pulse 1.8s ease-in-out infinite,
+        btn-bob 2.4s ease-in-out infinite;
     }
 
+    html.ui-alive .cta-float,
+    html[data-agent-mode='animated'] .cta-float {
+      animation: cta-float 2.1s ease-in-out infinite;
+    }
+
+    html.ui-alive .cta-float:nth-child(2),
+    html[data-agent-mode='animated'] .cta-float:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    html.ui-alive .cta-float:nth-child(3),
+    html[data-agent-mode='animated'] .cta-float:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    html.ui-alive .section-title,
+    html.ui-alive .page-title,
     html[data-agent-mode='animated'] .section-title,
     html[data-agent-mode='animated'] .page-title {
       animation: title-in 0.55s ease-out both;
     }
 
+    html.ui-alive header,
     html[data-agent-mode='animated'] header {
       transition: box-shadow 0.3s ease, background-color 0.3s ease;
-      animation: header-sheen 8s ease-in-out infinite;
+      animation: header-sheen 4s ease-in-out infinite;
     }
 
+    html.ui-alive .nav-link-live,
     html[data-agent-mode='animated'] .nav-link-live {
       position: relative;
+      display: inline-block;
       transition: transform 200ms ease, color 200ms ease, background-color 200ms ease;
+      animation: nav-bounce 1.7s ease-in-out infinite;
     }
 
+    html.ui-alive .nav-link-live:nth-child(1),
+    html[data-agent-mode='animated'] nav > div:nth-child(1) .nav-link-live {
+      animation-delay: 0s;
+    }
+
+    html.ui-alive nav > div:nth-child(2) .nav-link-live,
+    html[data-agent-mode='animated'] nav > div:nth-child(2) .nav-link-live {
+      animation-delay: 0.15s;
+    }
+
+    html.ui-alive nav > div:nth-child(3) .nav-link-live,
+    html[data-agent-mode='animated'] nav > div:nth-child(3) .nav-link-live {
+      animation-delay: 0.3s;
+    }
+
+    html.ui-alive nav > div:nth-child(4) .nav-link-live,
+    html[data-agent-mode='animated'] nav > div:nth-child(4) .nav-link-live {
+      animation-delay: 0.45s;
+    }
+
+    html.ui-alive nav > div:nth-child(5) .nav-link-live,
+    html[data-agent-mode='animated'] nav > div:nth-child(5) .nav-link-live {
+      animation-delay: 0.6s;
+    }
+
+    html.ui-alive .nav-link-live:hover,
     html[data-agent-mode='animated'] .nav-link-live:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px) scale(1.05);
+      animation-play-state: paused;
     }
 
+    html.ui-alive .nav-link-live::after,
     html[data-agent-mode='animated'] .nav-link-live::after {
       content: '';
       position: absolute;
@@ -134,51 +209,160 @@
       opacity: 0.55;
     }
 
+    html.ui-alive .nav-link-live:hover::after,
+    html.ui-alive .nav-link-live[aria-current='page']::after,
     html[data-agent-mode='animated'] .nav-link-live:hover::after,
     html[data-agent-mode='animated'] .nav-link-live[aria-current='page']::after {
       transform: scaleX(1);
     }
 
+    html.ui-alive .progress-bar-fill,
     html[data-agent-mode='animated'] .progress-bar-fill {
       transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1);
       background-image: linear-gradient(
         90deg,
         #14b8a6,
-        #2dd4bf,
         #5eead4,
+        #99f6e4,
+        #2dd4bf,
         #14b8a6
       );
-      background-size: 200% 100%;
-      animation: progress-shimmer 2.2s linear infinite;
+      background-size: 220% 100%;
+      animation: progress-shimmer 1.2s linear infinite;
       position: relative;
+      box-shadow: 0 0 12px rgba(20, 184, 166, 0.45);
     }
 
+    html.ui-alive .logo-mark,
     html[data-agent-mode='animated'] .logo-mark {
-      animation: logo-spin-bob 3s ease-in-out infinite;
+      animation: logo-spin-bob 2s ease-in-out infinite;
     }
 
+    html.ui-alive .hero-visual,
     html[data-agent-mode='animated'] .hero-visual {
-      animation: hero-ken-burns 14s ease-in-out infinite alternate;
+      animation: hero-ken-burns 7s ease-in-out infinite alternate;
     }
 
+    html.ui-alive .hero-overlay-live,
     html[data-agent-mode='animated'] .hero-overlay-live {
-      animation: overlay-pulse 6s ease-in-out infinite alternate;
+      animation: overlay-pulse 3s ease-in-out infinite alternate;
     }
 
+    html.ui-alive .mode-chip-live,
     html[data-agent-mode='animated'] .mode-chip-live {
-      animation: chip-bounce 2.8s ease-in-out infinite;
+      animation: chip-glow-pulse 1.4s ease-in-out infinite;
     }
 
+    html.ui-alive .mode-live-badge,
+    html[data-agent-mode='animated'] .mode-live-badge {
+      animation: badge-bounce 1.1s ease-in-out infinite;
+    }
+
+    html.ui-alive .agent-panel-live .card,
     html[data-agent-mode='animated'] .agent-panel-live .card {
-      animation: panel-glow 3.5s ease-in-out infinite;
+      animation: panel-glow 2.4s ease-in-out infinite;
     }
 
+    html.ui-alive footer,
     html[data-agent-mode='animated'] footer {
       animation: footer-fade 1s ease-out both;
     }
 
+    html.ui-alive .muted,
     html[data-agent-mode='animated'] .muted {
       animation: soft-fade 0.8s ease-out both;
+    }
+
+    /* List / quiz / lesson wave stagger */
+    html.ui-alive .list-wave > *,
+    html.ui-alive ul.space-y-2 > li,
+    html.ui-alive ul.space-y-3 > li,
+    html.ui-alive fieldset.space-y-2 > *,
+    html.ui-alive .space-y-3 > .rounded-card,
+    html[data-agent-mode='animated'] .list-wave > *,
+    html[data-agent-mode='animated'] ul.space-y-2 > li,
+    html[data-agent-mode='animated'] ul.space-y-3 > li,
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *,
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card {
+      animation: list-wave 2.8s ease-in-out infinite;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(1),
+    html.ui-alive ul.space-y-2 > li:nth-child(1),
+    html.ui-alive ul.space-y-3 > li:nth-child(1),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(1),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(1),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(1),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(1),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(1),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(1),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(2),
+    html.ui-alive ul.space-y-2 > li:nth-child(2),
+    html.ui-alive ul.space-y-3 > li:nth-child(2),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(2),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(2),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(2),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(2),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(2),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(2),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(2) {
+      animation-delay: 0.18s;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(3),
+    html.ui-alive ul.space-y-2 > li:nth-child(3),
+    html.ui-alive ul.space-y-3 > li:nth-child(3),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(3),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(3),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(3),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(3),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(3),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(3),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(3) {
+      animation-delay: 0.36s;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(4),
+    html.ui-alive ul.space-y-2 > li:nth-child(4),
+    html.ui-alive ul.space-y-3 > li:nth-child(4),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(4),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(4),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(4),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(4),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(4),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(4),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(4) {
+      animation-delay: 0.54s;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(5),
+    html.ui-alive ul.space-y-2 > li:nth-child(5),
+    html.ui-alive ul.space-y-3 > li:nth-child(5),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(5),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(5),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(5),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(5),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(5),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(5),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(5) {
+      animation-delay: 0.72s;
+    }
+
+    html.ui-alive .list-wave > *:nth-child(n + 6),
+    html.ui-alive ul.space-y-2 > li:nth-child(n + 6),
+    html.ui-alive ul.space-y-3 > li:nth-child(n + 6),
+    html.ui-alive fieldset.space-y-2 > *:nth-child(n + 6),
+    html.ui-alive .space-y-3 > .rounded-card:nth-child(n + 6),
+    html[data-agent-mode='animated'] .list-wave > *:nth-child(n + 6),
+    html[data-agent-mode='animated'] ul.space-y-2 > li:nth-child(n + 6),
+    html[data-agent-mode='animated'] ul.space-y-3 > li:nth-child(n + 6),
+    html[data-agent-mode='animated'] fieldset.space-y-2 > *:nth-child(n + 6),
+    html[data-agent-mode='animated'] .space-y-3 > .rounded-card:nth-child(n + 6) {
+      animation-delay: 0.9s;
     }
   }
 
@@ -190,6 +374,7 @@
   html[data-agent-mode='static'] .hero-visual,
   html[data-agent-mode='static'] .hero-overlay-live,
   html[data-agent-mode='static'] .mode-chip-live,
+  html[data-agent-mode='static'] .mode-live-badge,
   html[data-agent-mode='static'] .card,
   html[data-agent-mode='static'] .progress-bar-fill,
   html[data-agent-mode='static'] .agent-panel-live .card,
@@ -197,7 +382,15 @@
   html[data-agent-mode='static'] footer,
   html[data-agent-mode='static'] .muted,
   html[data-agent-mode='static'] .section-title,
-  html[data-agent-mode='static'] .page-title {
+  html[data-agent-mode='static'] .page-title,
+  html[data-agent-mode='static'] .page-alive,
+  html[data-agent-mode='static'] .nav-link-live,
+  html[data-agent-mode='static'] .cta-float,
+  html[data-agent-mode='static'] .list-wave > *,
+  html[data-agent-mode='static'] ul.space-y-2 > li,
+  html[data-agent-mode='static'] ul.space-y-3 > li,
+  html[data-agent-mode='static'] fieldset.space-y-2 > *,
+  html[data-agent-mode='static'] .space-y-3 > .rounded-card {
     animation: none !important;
   }
 
@@ -210,6 +403,10 @@
     background-image: none;
     animation: none;
   }
+
+  html:not(.ui-alive) .mode-live-badge {
+    display: none !important;
+  }
 }
 
 @keyframes bg-drift {
@@ -217,17 +414,27 @@
     background-position: 0% 0%, 100% 100%, 0% 50%;
   }
   to {
-    background-position: 100% 20%, 0% 80%, 100% 50%;
+    background-position: 100% 30%, 0% 70%, 100% 50%;
+  }
+}
+
+@keyframes page-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.15deg);
   }
 }
 
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
   }
   50% {
-    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.45);
+    box-shadow: 0 14px 40px rgba(37, 99, 235, 0.65);
   }
 }
 
@@ -243,30 +450,50 @@
   }
 }
 
+@keyframes btn-bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+
 @keyframes secondary-nudge {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-1px);
+    transform: translateY(-5px);
   }
 }
 
 @keyframes accent-pulse {
   0%,
   100% {
-    box-shadow: 0 6px 16px rgba(20, 184, 166, 0.22);
+    box-shadow: 0 6px 16px rgba(20, 184, 166, 0.28);
   }
   50% {
-    box-shadow: 0 10px 28px rgba(20, 184, 166, 0.4);
+    box-shadow: 0 14px 36px rgba(20, 184, 166, 0.55);
+  }
+}
+
+@keyframes cta-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
 @keyframes title-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -277,13 +504,13 @@
 @keyframes logo-spin-bob {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg) scale(1);
   }
   40% {
-    transform: translateY(-4px) rotate(-4deg);
+    transform: translateY(-8px) rotate(-10deg) scale(1.08);
   }
   70% {
-    transform: translateY(-2px) rotate(3deg);
+    transform: translateY(-3px) rotate(8deg) scale(1.04);
   }
 }
 
@@ -292,26 +519,28 @@
     transform: scale(1) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+    transform: scale(1.18) translate3d(-3%, 2%, 0);
   }
 }
 
 @keyframes overlay-pulse {
   from {
-    opacity: 0.92;
+    opacity: 0.85;
   }
   to {
     opacity: 1;
   }
 }
 
-@keyframes card-breathe {
+@keyframes card-float {
   0%,
   100% {
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   }
   50% {
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 22px 44px rgba(37, 99, 235, 0.2);
   }
 }
 
@@ -324,13 +553,32 @@
   }
 }
 
-@keyframes chip-bounce {
+@keyframes chip-glow-pulse {
   0%,
   100% {
     transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(20, 184, 166, 0.55),
+      0 0 0 3px rgba(20, 184, 166, 0.25);
   }
   50% {
-    transform: scale(1.04);
+    transform: scale(1.06);
+    box-shadow:
+      0 0 0 6px rgba(20, 184, 166, 0.15),
+      0 0 24px 4px rgba(20, 184, 166, 0.45);
+  }
+}
+
+@keyframes badge-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-6px) scale(1.12);
+  }
+  70% {
+    transform: translateY(-2px) scale(1.05);
   }
 }
 
@@ -338,9 +586,11 @@
   0%,
   100% {
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(0);
   }
   50% {
-    box-shadow: 0 14px 36px rgba(37, 99, 235, 0.18);
+    box-shadow: 0 18px 42px rgba(37, 99, 235, 0.28);
+    transform: translateY(-8px);
   }
 }
 
@@ -350,7 +600,27 @@
     box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
   }
   50% {
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+    box-shadow: 0 10px 28px rgba(37, 99, 235, 0.14);
+  }
+}
+
+@keyframes nav-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes list-wave {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-4px) translateY(-5px);
   }
 }
 
